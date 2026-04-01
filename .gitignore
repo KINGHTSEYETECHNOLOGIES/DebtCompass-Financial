@@ -1,0 +1,53 @@
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+
+# OS
+Thumbs.db
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Backups & temp files
+*.bak
+*.tmp
+*.temp
+*-backup.*
+
+# Node (if using any build tools in future)
+node_modules/
+package-lock.json
+yarn.lock
+
+# System files
+.AppleDouble
+.LSOverride
+._*
+
+# IDE-specific
+.classpath
+.project
+.settings/
+
+# Generated files
+dist/
+build/
+.next/
+.nuxt/
+.cache/
+
+# Sensitive data (add if using environment variables)
+.env
+.env.local
+.env.*.local
