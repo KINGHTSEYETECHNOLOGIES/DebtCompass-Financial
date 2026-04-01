@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PNBV6TXX');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<!-- ═══════════════════════════════════════════════════
+     ⚠️ SWAP ZONE 1 — PAGE TITLE & META
+     Change the title and description for each advertiser version.
+     NDR:     "National Debt Relief — Free Consultation | DebtCompass Financial"
+     JG:      "JG Wentworth Debt Relief — Free Consultation | DebtCompass Financial"
+     Freedom: "Freedom Debt Relief — Free Consultation | DebtCompass Financial"
+═══════════════════════════════════════════════════ -->
+<title>Freedom Debt Relief — Free Consultation | DebtCompass Financial</title>
+<meta name="description" content="Struggling with $10,000 or more in debt? See if you qualify for a free consultation with Freedom Debt Relief. No credit check, no obligation.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #0c1f3a;
+    --navy-lt: #163258;
+    --gold:    #c9973a;
+    --gold-lt: #e8b45a;
+    --cream:   #faf8f3;
+    --white:   #ffffff;
+    --muted:   #5a6478;
+    --border:  #ddd8ce;
+    --green:   #1a7a4a;
+    --green-lt:#22a261;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    overflow-x: hidden;
+  }
+
+  /* ── TOP INFO BAR ── */
+  .info-bar {
+    background: var(--navy-lt);
+    color: #a8c0d8;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.82rem;
+  }
+  .info-bar strong { color: #fff; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--navy);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+  }
+  .logo {
+    font-family: 'Playfair Display', serif;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .logo span { color: var(--gold-lt); }
+
+  .nav-cta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.88rem;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+  .nav-cta:hover { background: var(--gold-lt); }
+  .nav-cta svg { width: 14px; height: 14px; }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 64px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,151,58,0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 740px;
+    margin: 0 auto;
+  }
+
+  /* ═══════════════════════════════════════════════════
+     ⚠️ SWAP ZONE 2 — ADVERTISER BADGE
+     This shows which program the visitor is being matched with.
+     NDR:     "Matching You With National Debt Relief"
+     JG:      "Matching You With JG Wentworth"
+     Freedom: "Matching You With Freedom Debt Relief"
+  ═══════════════════════════════════════════════════ */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(201,151,58,0.15);
+    border: 1px solid rgba(201,151,58,0.35);
+    color: var(--gold-lt);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    padding: 7px 18px;
+    border-radius: 99px;
+    margin-bottom: 24px;
+    animation: fadeDown 0.5s ease both;
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.9rem, 5vw, 3.2rem);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.12;
+    letter-spacing: -1px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.55s ease 0.1s both;
+  }
+  .hero h1 em { font-style: italic; color: var(--gold-lt); }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-sub {
+    font-size: 1.08rem;
+    color: #8fadc8;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    font-weight: 300;
+    animation: fadeUp 0.55s ease 0.2s both;
+  }
+
+  .hero-cta-block { animation: fadeUp 0.55s ease 0.3s both; }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 20px 48px;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(201,151,58,0.4);
+    transition: background 0.2s, transform 0.1s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-primary svg { width: 20px; height: 20px; }
+
+  .hero-micro {
+    display: flex;
+    justify-content: center;
+    gap: 22px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .hero-micro-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #607d96;
+    font-size: 0.8rem;
+  }
+  .hero-micro-item svg { width: 13px; height: 13px; color: var(--gold); }
+
+  .hero-wave {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    line-height: 0;
+  }
+  .hero-wave svg { display: block; width: 100%; }
+
+  /* ── PROOF STRIP ── */
+  .proof-strip {
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+    padding: 22px 24px;
+  }
+  .proof-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .proof-stat { text-align: center; }
+  .proof-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .proof-label { font-size: 0.75rem; color: var(--muted); margin-top: 3px; }
+
+  /* ── SECTIONS ── */
+  .section { padding: 64px 24px; }
+  .section-inner { max-width: 960px; margin: 0 auto; }
+  .section-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+    font-weight: 700;
+    color: var(--navy);
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+    margin-bottom: 36px;
+  }
+
+  /* ── BENEFITS ── */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+  }
+  .benefit-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 22px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+  .benefit-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 4px 20px rgba(201,151,58,0.1);
+  }
+  .benefit-icon {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--navy), var(--navy-lt));
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+  .benefit-card h3 { font-size: 0.97rem; font-weight: 600; color: var(--navy); margin-bottom: 5px; }
+  .benefit-card p { font-size: 0.87rem; color: var(--muted); line-height: 1.6; }
+
+  /* ── HOW IT WORKS ── */
+  .hiw-bg { background: var(--navy); }
+  .hiw-bg .section-tag { color: var(--gold-lt); }
+  .hiw-bg .section-title { color: #fff; }
+  .steps-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+  }
+  .hiw-step {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 30px 22px;
+    text-align: center;
+  }
+  .step-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: rgba(201,151,58,0.2);
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .hiw-step h3 { font-size: 0.97rem; font-weight: 600; color: #fff; margin-bottom: 7px; }
+  .hiw-step p { font-size: 0.84rem; color: #7fa0bc; line-height: 1.6; }
+
+  /* ── MID CTA ── */
+  .mid-cta {
+    background: linear-gradient(135deg, var(--green) 0%, #0f5032 100%);
+    padding: 52px 24px;
+    text-align: center;
+  }
+  .mid-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+  .mid-cta p { color: rgba(255,255,255,0.7); font-size: 0.97rem; margin-bottom: 26px; }
+  .btn-mid {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    color: var(--green);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    padding: 17px 38px;
+    border-radius: 8px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+    transition: background 0.2s, transform 0.1s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-mid:hover { background: #f0fdf4; transform: translateY(-1px); }
+  .btn-mid svg { width: 18px; height: 18px; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 18px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px 22px;
+  }
+  .stars { color: #f59e0b; font-size: 1rem; letter-spacing: 2px; margin-bottom: 12px; }
+  .testimonial-card blockquote {
+    font-size: 0.93rem;
+    color: var(--navy);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 14px;
+  }
+  .testimonial-card blockquote strong { font-style: normal; font-weight: 600; color: var(--green); }
+  .reviewer { display: flex; align-items: center; gap: 10px; }
+  .reviewer-avatar {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700;
+    font-size: 0.82rem;
+    flex-shrink: 0;
+  }
+  .reviewer-name { font-weight: 600; font-size: 0.86rem; color: var(--navy); }
+  .reviewer-detail { font-size: 0.73rem; color: var(--muted); }
+
+  /* ── FAQ ── */
+  .faq-bg { background: var(--white); }
+  .faq-list { max-width: 680px; }
+  .faq-item { border-bottom: 1px solid var(--border); }
+  .faq-q {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--navy);
+    padding: 18px 40px 18px 0;
+    cursor: pointer;
+    position: relative;
+    line-height: 1.4;
+  }
+  .faq-q::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.4rem;
+    color: var(--gold);
+    font-weight: 300;
+    transition: transform 0.2s;
+  }
+  .faq-item.open .faq-q::after { transform: translateY(-50%) rotate(45deg); }
+  .faq-a {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.7;
+    padding-bottom: 18px;
+    display: none;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ── BOTTOM CTA ── */
+  .bottom-cta {
+    background: var(--navy);
+    padding: 80px 24px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .bottom-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(201,151,58,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .bottom-cta-inner { position: relative; z-index: 1; }
+  .bottom-cta h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.7rem, 4vw, 2.6rem);
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.7px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .bottom-cta h2 em { font-style: italic; color: var(--gold-lt); }
+  .bottom-cta > .bottom-cta-inner > p {
+    color: #7fa0bc;
+    font-size: 1rem;
+    margin-bottom: 34px;
+  }
+  .btn-bottom {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--gold);
+    color: var(--navy);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 20px 48px;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(201,151,58,0.4);
+    transition: background 0.2s, transform 0.1s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-bottom:hover { background: var(--gold-lt); transform: translateY(-1px); }
+  .btn-bottom svg { width: 22px; height: 22px; }
+  .bottom-micro { margin-top: 14px; font-size: 0.76rem; color: #3d5a73; }
+  .trust-row {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  .trust-badge { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+  .trust-badge-icon {
+    width: 42px; height: 42px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+  }
+  .trust-badge span { font-size: 0.7rem; color: #3d5a73; text-align: center; max-width: 80px; line-height: 1.3; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #070f1c;
+    padding: 24px;
+    text-align: center;
+    font-size: 0.72rem;
+    color: #2d3f52;
+    line-height: 1.8;
+  }
+  footer a { color: #3d5570; text-decoration: none; }
+  footer a:hover { color: #5a7a96; }
+
+  /* ── MOBILE STICKY ── */
+  .mobile-sticky {
+    display: none;
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 200;
+    background: var(--gold);
+  }
+  .mobile-sticky a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--navy);
+    text-decoration: none;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 15px;
+    width: 100%;
+  }
+  .mobile-sticky svg { width: 17px; height: 17px; }
+
+  @media (max-width: 640px) {
+    .mobile-sticky { display: block; }
+    body { padding-bottom: 56px; }
+    .nav-cta { display: none; }
+    .proof-inner { gap: 20px; }
+  }
+
+  .fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
+  }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNBV6TXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- INFO BAR — same on all versions, do not change -->
+<div class="info-bar">
+  Free debt relief consultations available now — <strong>no credit check, no obligation.</strong>
+</div>
+
+<!-- NAV — same on all versions, do not change -->
+<nav>
+  <a href="/" class="logo">Debt<span>Compass</span> Financial</a>
+  <!-- ⚠️ SWAP ZONE 3 — NAV CTA LINK: replace with this advertiser's affiliate link -->
+  <a href="YOUR_AFFILIATE_LINK_HERE" class="nav-cta" id="nav-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Check My Eligibility
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+
+    <!-- ⚠️ SWAP ZONE 2 — ADVERTISER BADGE TEXT -->
+    <div class="hero-badge">Matching You With Freedom Debt Relief</div>
+
+    <!-- ⚠️ SWAP ZONE 4 — HEADLINE
+         NDR:     "You May Qualify for National Debt Relief's <em>Settlement Program</em>"
+         JG:      "You May Qualify for JG Wentworth's <em>Debt Relief Program</em>"
+         Freedom: "You May Qualify for Freedom Debt Relief's <em>Settlement Program</em>"
+    -->
+    <h1>You May Qualify for Freedom Debt Relief's <em>Settlement Program</em></h1>
+
+    <!-- ⚠️ SWAP ZONE 5 — SUBHEADLINE
+         Mention the advertiser by name once. Keep everything else the same.
+         NDR:     "National Debt Relief has helped over 500,000 people..."
+         JG:      "JG Wentworth has helped thousands of Americans..."
+         Freedom: "Freedom Debt Relief, one of the largest settlement companies..."
+    -->
+    <p class="hero-sub">
+      Freedom Debt Relief has helped thousands of Americans reduce their debt and move toward financial freedom. If you carry $10,000 or more in unsecured debt, a free consultation could show you exactly what your options are.
+    </p>
+
+    <div class="hero-cta-block">
+      <!-- ⚠️ SWAP ZONE 3 — ALL BUTTONS: replace YOUR_AFFILIATE_LINK_HERE with this advertiser's link -->
+      <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-primary" id="hero-cta">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Check My Eligibility — Free
+      </a>
+      <div class="hero-micro">
+        <div class="hero-micro-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          No credit check
+        </div>
+        <div class="hero-micro-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          Under 2 minutes
+        </div>
+        <div class="hero-micro-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          256-bit secure
+        </div>
+        <div class="hero-micro-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Zero obligation
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none" fill="#faf8f3">
+      <path d="M0,48 C360,0 1080,0 1440,48 L1440,48 L0,48 Z"/>
+    </svg>
+  </div>
+</section>
+
+<!-- TRUST STRIP — same on all versions -->
+<div class="proof-strip">
+  <div class="proof-inner">
+    <div class="proof-stat fade-up">
+      <div class="proof-number">🔒</div>
+      <div class="proof-label">256-Bit Secure Connection</div>
+    </div>
+    <div class="proof-stat fade-up">
+      <div class="proof-number">$0</div>
+      <div class="proof-label">Cost to check eligibility</div>
+    </div>
+    <div class="proof-stat fade-up">
+      <div class="proof-number">✓</div>
+      <div class="proof-label">No credit check required</div>
+    </div>
+    <div class="proof-stat fade-up">
+      <div class="proof-number">0</div>
+      <div class="proof-label">Obligation to enroll</div>
+    </div>
+  </div>
+</div>
+
+<!-- BENEFITS — same on all versions -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag fade-up">Why Debt Relief Works</div>
+    <div class="section-title fade-up">What the program can do for you</div>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">📉</div>
+        <div>
+          <h3>Reduce Your Total Balance</h3>
+          <p>Specialists negotiate directly with creditors to reduce the total amount you owe — not just lower your interest rate.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">💵</div>
+        <div>
+          <h3>One Monthly Payment</h3>
+          <p>Replace multiple minimum payments with one manageable monthly deposit while your debt gets negotiated down.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">📋</div>
+        <div>
+          <h3>No Upfront Fees</h3>
+          <p>Fees are charged only after a debt has been successfully settled. Nothing is owed until results are delivered.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🎯</div>
+        <div>
+          <h3>Clear Path to Debt Freedom</h3>
+          <p>Programs are typically completed in 24 to 48 months — far faster than decades of minimum payments.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🤝</div>
+        <div>
+          <h3>Dedicated Specialist</h3>
+          <p>A certified debt specialist handles all creditor communication on your behalf. You stop dealing with collectors.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🔒</div>
+        <div>
+          <h3>Free Consultation</h3>
+          <p>No cost, no credit check, and no obligation to enroll. You find out your options and decide what is right for you.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS — same on all versions -->
+<section class="section hiw-bg">
+  <div class="section-inner">
+    <div class="section-tag fade-up">Simple Process</div>
+    <div class="section-title fade-up">What happens after you check eligibility</div>
+    <div class="steps-row">
+      <div class="hiw-step fade-up">
+        <div class="step-num">01</div>
+        <h3>Check Eligibility</h3>
+        <p>Click the button and answer a few basic questions. No credit check. Takes under 2 minutes.</p>
+      </div>
+      <div class="hiw-step fade-up">
+        <div class="step-num">02</div>
+        <h3>Free Consultation</h3>
+        <p>A certified specialist reviews your situation and walks you through your options clearly — no pressure.</p>
+      </div>
+      <div class="hiw-step fade-up">
+        <div class="step-num">03</div>
+        <h3>Enroll If It Fits</h3>
+        <p>If the program makes sense for your situation, you enroll and negotiations with creditors begin.</p>
+      </div>
+      <div class="hiw-step fade-up">
+        <div class="step-num">04</div>
+        <h3>Become Debt Free</h3>
+        <p>Debts are settled one by one. Most clients complete the program in 24 to 48 months.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MID CTA -->
+<div class="mid-cta">
+  <h2>Ready to see what you could reduce?</h2>
+  <p>Free to check. No credit pull. No obligation. Takes under 2 minutes.</p>
+  <!-- ⚠️ SWAP ZONE 3 — AFFILIATE LINK -->
+  <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-mid" id="mid-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Check My Eligibility — Free
+  </a>
+</div>
+
+<!-- WHY DEBT RELIEF — replaces testimonials, fully compliant -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-tag fade-up">Important to Know</div>
+    <div class="section-title fade-up">What to expect from a debt relief program</div>
+    <div class="benefits-grid">
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">📞</div>
+        <div>
+          <h3>Your Consultation Is Free</h3>
+          <p>There is no cost to speak with a certified debt specialist. You will receive a clear explanation of your options with no pressure to enroll.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">📄</div>
+        <div>
+          <h3>Fees Only After Results</h3>
+          <p>Legitimate debt relief programs are prohibited from charging upfront fees. You pay only after a debt has been successfully negotiated and settled.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">⚖️</div>
+        <div>
+          <h3>Understand the Trade-offs</h3>
+          <p>Debt settlement may affect your credit score during the program. Your specialist will explain exactly what to expect before you make any decision.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🗓️</div>
+        <div>
+          <h3>A Clear Timeline</h3>
+          <p>Programs typically run 24 to 48 months. You will know your estimated timeline and monthly deposit amount before enrolling — no surprises.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🚫</div>
+        <div>
+          <h3>No Obligation to Enroll</h3>
+          <p>Checking your eligibility and completing the consultation does not commit you to anything. You decide if and when the program is right for you.</p>
+        </div>
+      </div>
+      <div class="benefit-card fade-up">
+        <div class="benefit-icon">🏛️</div>
+        <div>
+          <h3>Work With Accredited Programs</h3>
+          <p>Our partner programs are members of the American Fair Credit Council and accredited with the Better Business Bureau. Verify independently before enrolling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ — same on all versions -->
+<section class="section faq-bg">
+  <div class="section-inner">
+    <div class="section-tag fade-up">Common Questions</div>
+    <div class="section-title fade-up">What people ask before checking eligibility</div>
+    <div class="faq-list">
+      <div class="faq-item fade-up">
+        <button class="faq-q" onclick="toggleFaq(this)">Will this hurt my credit score?</button>
+        <div class="faq-a">Debt settlement programs can impact your credit score during enrollment as accounts may become delinquent before negotiation. For many people carrying significant debt, their score is already affected. Once debts are settled you can begin rebuilding from a debt-free position. Your specialist will explain the full credit impact during your free consultation.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q" onclick="toggleFaq(this)">What types of debt qualify?</button>
+        <div class="faq-a">Most unsecured debts qualify including credit cards, personal loans, medical bills, and department store cards. Secured debts such as mortgages and auto loans generally do not qualify. Your specialist will review your specific accounts during the consultation.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q" onclick="toggleFaq(this)">How much does it cost?</button>
+        <div class="faq-a">Checking your eligibility is completely free and there is no obligation. If you enroll, fees are charged only after a debt has been successfully settled — never upfront. Fee structures will be explained clearly before you enroll.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q" onclick="toggleFaq(this)">How long does the program take?</button>
+        <div class="faq-a">Most programs are completed in 24 to 48 months depending on total debt enrolled and your monthly deposit. This is significantly faster than minimum payments which can take decades to pay off the same balance.</div>
+      </div>
+      <div class="faq-item fade-up">
+        <button class="faq-q" onclick="toggleFaq(this)">What if I'm not sure I qualify?</button>
+        <div class="faq-a">The only way to know is to check. The process takes under 2 minutes, requires no credit check, and is completely free. Your specialist will tell you honestly whether you qualify and what your options are — including if debt relief is not the right fit.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <h2>Take 2 minutes.<br><em>Change your financial future.</em></h2>
+    <p>Free to check. No credit pull. No obligation. Available now.</p>
+    <!-- ⚠️ SWAP ZONE 3 — AFFILIATE LINK -->
+    <a href="YOUR_AFFILIATE_LINK_HERE" class="btn-bottom" id="bottom-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Check My Eligibility — Free
+    </a>
+    <p class="bottom-micro">No credit check · No upfront fees · Results in minutes</p>
+    <div class="trust-row">
+      <div class="trust-badge">
+        <div class="trust-badge-icon">🔒</div>
+        <span>256-Bit Encrypted</span>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">✓</div>
+        <span>No Credit Check</span>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">$0</div>
+        <span>Free to Check</span>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">🤝</div>
+        <span>No Obligation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 DebtCompass Financial &nbsp;·&nbsp;
+  <a href="/legal.html#privacy">Privacy Policy</a> &nbsp;·&nbsp;
+  <a href="/legal.html#terms">Terms of Service</a> &nbsp;·&nbsp;
+  <a href="/legal.html#disclosure">Advertiser Disclosure</a><br>
+  DebtCompass Financial is not a debt relief company, lender, or financial advisor. We are a free matching service compensated by our partner providers.<br>
+  Debt relief programs involve risk. Results vary. Not all debts or consumers qualify. See our <a href="/legal.html#disclosure">Advertiser Disclosure</a> for full details.
+</footer>
+
+<!-- MOBILE STICKY -->
+<div class="mobile-sticky">
+  <!-- ⚠️ SWAP ZONE 3 — AFFILIATE LINK -->
+  <a href="YOUR_AFFILIATE_LINK_HERE" id="mobile-cta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    Check My Eligibility — Free
+  </a>
+</div>
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
