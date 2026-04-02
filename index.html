@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-PNBV6TXX');</script>
-<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<title>Find Your Debt Relief Match — Free in 60 Seconds</title>
+<title>Find Your Best Financial Match — Free in 60 Seconds | DebtCompass Financial</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -86,7 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     transition: width 0.4s ease;
   }
 
-  /* ── MAIN CONTAINER ── */
+  /* ── MAIN ── */
   main {
     flex: 1;
     display: flex;
@@ -110,7 +102,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── LANDING SCREEN ── */
+  /* ── LANDING ── */
   .eyebrow {
     font-size: 0.72rem;
     font-weight: 600;
@@ -173,7 +165,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin-top: 10px;
   }
 
-  /* ── QUIZ SCREENS ── */
+  /* ── QUIZ ── */
   .q-label {
     font-size: 0.78rem;
     font-weight: 600;
@@ -199,7 +191,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     border-radius: 10px;
     padding: 15px 18px;
     cursor: pointer;
-    transition: border-color 0.18s, background 0.18s, transform 0.1s;
+    transition: border-color 0.18s, background 0.18s;
     user-select: none;
   }
   .opt:hover { border-color: var(--teal); background: #f0fdfa; }
@@ -223,10 +215,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display: flex; align-items: center; justify-content: center;
     transition: all 0.15s;
   }
-  .opt.selected .opt-check {
-    background: var(--teal);
-    border-color: var(--teal);
-  }
+  .opt.selected .opt-check { background: var(--teal); border-color: var(--teal); }
   .opt.selected .opt-check::after {
     content: '';
     width: 6px; height: 6px;
@@ -271,8 +260,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
 
   /* ── PROCESSING ── */
-  #screen-processing { text-align: center; padding: 20px 0; }
-  .spinner-wrap { margin-bottom: 28px; }
   .spinner {
     width: 56px; height: 56px;
     border: 4px solid var(--border);
@@ -302,10 +289,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .step-dot.done { background: var(--success); }
 
   /* ── RESULTS ── */
-  #screen-result .match-header {
-    text-align: center;
-    margin-bottom: 28px;
-  }
   .match-badge {
     display: inline-block;
     background: #d1fae5;
@@ -324,13 +307,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color: var(--navy);
     margin-bottom: 8px;
   }
-  #screen-result .sub { margin-bottom: 0; }
 
   .offer-card {
     border: 1.5px solid var(--border);
     border-radius: 12px;
     overflow: hidden;
-    margin: 24px 0;
+    margin: 24px 0 16px;
   }
   .offer-header {
     background: var(--navy);
@@ -358,12 +340,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gap: 10px;
     align-items: flex-start;
   }
-  .offer-highlights li::before {
-    content: '✓';
-    color: var(--success);
-    font-weight: 700;
-    flex-shrink: 0;
-  }
+  .offer-highlights li::before { content: '✓'; color: var(--success); font-weight: 700; flex-shrink: 0; }
 
   .btn-offer {
     display: block;
@@ -384,11 +361,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-offer:hover { background: var(--teal-light); }
 
   .secondary-offer {
-    margin-top: 16px;
     padding: 16px;
     background: #f8fafc;
     border-radius: 10px;
     border: 1px solid var(--border);
+    margin-bottom: 16px;
   }
   .secondary-label {
     font-size: 0.72rem;
@@ -398,11 +375,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     color: var(--muted);
     margin-bottom: 8px;
   }
-  .secondary-offer p {
-    font-size: 0.88rem;
-    color: var(--navy);
-    margin-bottom: 10px;
-  }
+  .secondary-offer p { font-size: 0.88rem; color: var(--navy); margin-bottom: 10px; }
   .btn-secondary {
     display: inline-block;
     font-size: 0.88rem;
@@ -419,16 +392,67 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .btn-secondary:hover { background: var(--teal); color: #fff; }
 
+  /* ── EMAIL CAPTURE ── */
+  .email-capture {
+    background: #f1f5f9;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+  .email-capture p.ec-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+  .email-capture p.ec-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .email-row { display: flex; gap: 8px; }
+  .email-row input {
+    flex: 1;
+    border: 1.5px solid var(--border);
+    border-radius: 7px;
+    padding: 9px 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    color: var(--navy);
+    outline: none;
+  }
+  .email-row input:focus { border-color: var(--teal); }
+  .email-row button {
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 9px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+  .email-row button:hover { background: var(--navy-mid); }
+  .ec-confirm { font-size: 0.78rem; color: var(--success); margin-top: 8px; display: none; }
+  .ec-note { font-size: 0.72rem; color: #94a3b8; margin-top: 6px; line-height: 1.5; }
+
   .disclaimer {
     font-size: 0.72rem;
     color: #94a3b8;
     line-height: 1.6;
-    margin-top: 24px;
+    margin-top: 8px;
     padding-top: 16px;
     border-top: 1px solid var(--border);
   }
 
-  /* ── FOOTER ── */
+  .screen { display: none; }
+  .screen.active { display: block; animation: fadeUp 0.35s ease both; }
+
   footer {
     background: var(--navy);
     padding: 18px 24px;
@@ -440,120 +464,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   footer a { color: #64748b; text-decoration: none; }
   footer a:hover { color: #94a3b8; }
 
-  /* ── HIDDEN ── */
-  .screen { display: none; }
-  .screen.active { display: block; animation: fadeUp 0.35s ease both; }
-
   @media (max-width: 520px) {
-    .card { padding: 28px 22px 28px; }
+    .card { padding: 28px 22px; }
     h1 { font-size: 1.6rem; }
-    .trust-row { gap: 12px; }
-  }
-
-    /* ── EMAIL CAPTURE ── */
-  .email-capture-box {
-    margin-top: 20px;
-    padding: 22px 20px 18px;
-    background: #f8f7f3;
-    border: 1px solid var(--border);
-    border-radius: 12px;
-  }
-
-  .email-capture-title {
-    font-size: 1.05rem;
-    font-weight: 700;
-    color: var(--navy);
-    margin-bottom: 6px;
-  }
-
-  .email-capture-sub {
-    font-size: 0.9rem;
-    color: var(--navy);
-    line-height: 1.5;
-    margin-bottom: 14px;
-  }
-
-  .email-capture-form {
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-
-  .email-capture-form input {
-    flex: 1;
-    min-width: 0;
-    padding: 14px 16px;
-    border: 1px solid #d6d3cd;
-    border-radius: 10px;
-    background: #fff;
-    color: var(--navy);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    outline: none;
-  }
-
-  .email-capture-form input:focus {
-    border-color: var(--teal);
-    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.10);
-  }
-
-  .email-capture-form button {
-    padding: 14px 18px;
-    border: 1px solid #d6d3cd;
-    border-radius: 10px;
-    background: #fff;
-    color: var(--navy);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s, border-color 0.2s;
-  }
-
-  .email-capture-form button:hover {
-    background: #f1efe9;
-    border-color: #c9c5bd;
-  }
-
-  .email-capture-note {
-    font-size: 0.8rem;
-    color: var(--muted);
-    line-height: 1.5;
-    margin-bottom: 0;
-  }
-
-  .email-capture-success {
-    font-size: 0.88rem;
-    color: var(--success);
-    margin-top: 12px;
-    margin-bottom: 0;
-  }
-
-  .email-capture-error {
-    font-size: 0.88rem;
-    color: #b91c1c;
-    margin-top: 12px;
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 520px) {
-    .email-capture-form {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .email-capture-form button {
-      width: 100%;
-    }
   }
 </style>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNBV6TXX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 
 <header>
   <div class="logo">Debt<span>Compass</span> Financial</div>
@@ -573,11 +490,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main>
 <div class="card">
 
-  <!-- ══ SCREEN 0: LANDING ══ -->
+  <!-- ══ LANDING ══ -->
   <div class="screen active" id="screen-landing">
     <div class="eyebrow">Free · No Credit Pull · 60 Seconds</div>
     <h1>Find your <em>best</em> financial option — matched to your situation</h1>
-    <p class="sub">Answer 3 quick questions and we'll show you the highest-rated programs people in your exact situation are using right now.</p>
+    <p class="sub">Answer 3 quick questions and we'll show you the highest-rated programs for your exact situation.</p>
     <div class="trust-row">
       <div class="trust-item">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
@@ -588,7 +505,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Results in under 60 seconds
       </div>
       <div class="trust-item">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
         Free — no obligation to enroll
       </div>
     </div>
@@ -596,7 +513,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <p class="btn-sub">Free service. We're compensated by our partners if you apply.</p>
   </div>
 
-  <!-- ══ SCREEN 1: Q1 — DEBT ══ -->
+  <!-- ══ Q1: DEBT AMOUNT ══ -->
   <div class="screen" id="screen-q1">
     <div class="q-label">Question 1 of 3</div>
     <div class="q-text">How much unsecured debt are you currently carrying?</div>
@@ -609,7 +526,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="opt-check"></div>
       </div>
-      <div class="opt" onclick="selectOpt(this,'debt','low')">
+      <div class="opt" onclick="selectOpt(this,'debt','mid')">
         <div class="opt-icon">📊</div>
         <div class="opt-text">
           <div class="opt-title">$2,000 – $9,999</div>
@@ -632,7 +549,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- ══ SCREEN 2: Q2 — CREDIT ══ -->
+  <!-- ══ Q2: CREDIT SCORE ══ -->
   <div class="screen" id="screen-q2">
     <div class="q-label">Question 2 of 3</div>
     <div class="q-text">What's your approximate credit score?</div>
@@ -668,7 +585,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- ══ SCREEN 3: Q3 — GOAL ══ -->
+  <!-- ══ Q3: GOAL ══ -->
   <div class="screen" id="screen-q3">
     <div class="q-label">Question 3 of 3</div>
     <div class="q-text">What's your primary goal right now?</div>
@@ -704,29 +621,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- ══ SCREEN 4: PROCESSING ══ -->
+  <!-- ══ PROCESSING ══ -->
   <div class="screen" id="screen-processing">
     <div style="text-align:center; padding: 20px 0;">
-      <div class="spinner-wrap">
-        <div class="spinner"></div>
-        <div style="font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--navy); margin-bottom:6px;">Finding your best match…</div>
-        <div style="font-size:0.85rem; color:var(--muted);">Comparing 40+ programs in real time</div>
-      </div>
+      <div class="spinner"></div>
+      <div style="font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--navy); margin-bottom:6px;">Finding your best match…</div>
+      <div style="font-size:0.85rem; color:var(--muted);">Reviewing your answers against available programs</div>
       <ul class="processing-steps" id="step-list">
         <li><div class="step-dot" id="dot1"></div> Reviewing your debt profile</li>
         <li><div class="step-dot" id="dot2"></div> Checking credit eligibility</li>
         <li><div class="step-dot" id="dot3"></div> Matching to top-rated programs</li>
-        <li><div class="step-dot" id="dot4"></div> Preparing your personalized offer</li>
+        <li><div class="step-dot" id="dot4"></div> Preparing your personalized result</li>
       </ul>
     </div>
   </div>
 
-  <!-- ══ SCREEN 5: RESULTS ══ -->
+  <!-- ══ RESULTS ══ -->
   <div class="screen" id="screen-result">
-    <div class="match-header">
+    <div style="text-align:center; margin-bottom:20px;">
       <div class="match-badge">✓ Match Found</div>
       <h2 id="result-headline">Your Top Recommendation</h2>
-      <p class="sub" id="result-sub"></p>
+      <p class="sub" id="result-sub" style="margin-bottom:0;"></p>
     </div>
 
     <!-- PRIMARY OFFER -->
@@ -734,259 +649,516 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="offer-header">
         <div class="offer-logo" id="offer-logo">💰</div>
         <div>
-          <div class="offer-name" id="offer-name">National Debt Relief</div>
-          <div class="offer-type" id="offer-type">Debt Relief Program</div>
+          <div class="offer-name" id="offer-name"></div>
+          <div class="offer-type" id="offer-type"></div>
         </div>
       </div>
       <div class="offer-body">
-        <ul class="offer-highlights" id="offer-highlights">
-          <li>Could reduce your debt by up to 50%</li>
-          <li>No upfront fees — you pay only when settled</li>
-          <li>Free consultation, no obligation</li>
-          <li>Rated A+ with the Better Business Bureau</li>
-        </ul>
-        <!-- ⚠️ REPLACE href WITH YOUR AFFILIATE LINK -->
-        <a class="btn-offer" href="YOUR_AFFILIATE_LINK_HERE" id="offer-cta" target="_blank" rel="noopener">
-          See If I Qualify — Free →
-        </a>
+        <ul class="offer-highlights" id="offer-highlights"></ul>
+        <a class="btn-offer" href="#" id="offer-cta" target="_blank" rel="noopener">See If I Qualify — Free →</a>
       </div>
     </div>
 
     <!-- SECONDARY OFFER -->
     <div class="secondary-offer" id="secondary-wrap">
       <div class="secondary-label">Also worth considering</div>
-      <p id="secondary-text">Want to start rebuilding credit at the same time? The OpenSky® Secured Visa® requires no credit check and reports to all 3 bureaus.</p>
-      <!-- ⚠️ REPLACE href WITH YOUR SECONDARY AFFILIATE LINK -->
-      <a class="btn-secondary" href="YOUR_SECONDARY_AFFILIATE_LINK_HERE" id="secondary-cta" target="_blank" rel="noopener">
-        View Card Details →
-      </a>
+      <p id="secondary-text"></p>
+      <a class="btn-secondary" href="#" id="secondary-cta" target="_blank" rel="noopener">View Details →</a>
     </div>
-    <div class="email-capture-box" id="email-capture-box">
-  <h3 class="email-capture-title">Get your results emailed to you</h3>
-  <p class="email-capture-sub">
-    Optional — enter your email and we'll send your matched options so you can review them later.
-  </p>
 
-  <form id="email-capture-form" class="email-capture-form">
-    <input
-      type="email"
-      id="email-capture-input"
-      name="email"
-      placeholder="your@email.com"
-      autocomplete="email"
-    />
-    <button type="submit" id="email-capture-submit">Send</button>
-  </form>
-
-  <p class="email-capture-note">
-    No spam. Unsubscribe anytime. We may send relevant offers based on your profile.
-  </p>
-
-  <p id="email-capture-success" class="email-capture-success" style="display:none;">
-    Thanks — your results have been sent.
-  </p>
-
-  <p id="email-capture-error" class="email-capture-error" style="display:none;">
-    Something went wrong. Please try again.
-  </p>
-</div>
+    <!-- EMAIL CAPTURE -->
+    <div class="email-capture">
+      <p class="ec-title">Get your results emailed to you</p>
+      <p class="ec-sub">Optional — enter your email and we'll send your matched options so you can review them later.</p>
+      <div class="email-row">
+        <input type="email" id="ec-input" placeholder="your@email.com" />
+        <button onclick="submitEmail()">Send</button>
+      </div>
+      <p class="ec-confirm" id="ec-confirm">✓ Got it — check your inbox shortly.</p>
+      <p class="ec-note">No spam. Unsubscribe anytime. We may send relevant offers based on your profile.</p>
+    </div>
 
     <p class="disclaimer">
-      Results are based on self-reported information and are for informational purposes only. 
-      We do not perform credit checks. Clicking "See If I Qualify" will take you to a partner's 
-      site where additional information may be required. We may receive compensation if you apply 
-      or are approved. This is not a guarantee of approval or specific savings amounts.
+      Results are based on self-reported information and are for informational purposes only.
+      We do not perform credit checks. Clicking any offer button will take you to a partner's
+      site where additional information may be required. We may receive compensation if you apply
+      or are approved. This is not a guarantee of approval or specific outcomes.
     </p>
   </div>
 
-</div><!-- /card -->
+</div>
 </main>
 
 <footer>
-  © 2025 DebtCompass Financial · <a href="legal.html#privacy">Privacy Policy</a> · <a href="legal.html#terms">Terms of Service</a> · <a href="legal.html#disclosure">Advertiser Disclosure</a><br>
-  This site is not affiliated with any government agency. Results may vary.
+  © 2026 DebtCompass Financial ·
+  <a href="/legal.html#privacy">Privacy Policy</a> ·
+  <a href="/legal.html#terms">Terms of Service</a> ·
+  <a href="/legal.html#disclosure">Advertiser Disclosure</a><br>
+  This site is not a lender, debt relief company, or financial advisor. Results may vary.
 </footer>
 
 <script>
-  const answers = {};
+const answers = {};
 
-  function startQuiz() {
-    document.getElementById('progress-wrap').style.display = 'block';
-    goTo('screen-q1');
+function startQuiz() {
+  document.getElementById('progress-wrap').style.display = 'block';
+  goTo('screen-q1');
+}
+
+function goTo(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  updateProgress(id);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function updateProgress(id) {
+  const map = { 'screen-q1':[1,'33%'], 'screen-q2':[2,'66%'], 'screen-q3':[3,'100%'] };
+  const pw = document.getElementById('progress-wrap');
+  if (map[id]) {
+    pw.style.display = 'block';
+    document.getElementById('progress-label').textContent = 'Question ' + map[id][0] + ' of 3';
+    document.getElementById('progress-fill').style.width = map[id][1];
+  } else {
+    pw.style.display = 'none';
   }
+}
 
-  function goTo(screenId) {
-    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
-    document.getElementById(screenId).classList.add('active');
-    updateProgress(screenId);
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  }
+function selectOpt(el, key, val) {
+  el.closest('.options').querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+  el.classList.add('selected');
+  answers[key] = val;
+  const map = { debt:'btn-next-1', credit:'btn-next-2', goal:'btn-next-3' };
+  if (map[key]) document.getElementById(map[key]).disabled = false;
+}
 
-  function updateProgress(screenId) {
-    const map = { 'screen-q1': [1, '33%'], 'screen-q2': [2, '66%'], 'screen-q3': [3, '100%'] };
-    const pw = document.getElementById('progress-wrap');
-    if (map[screenId]) {
-      pw.style.display = 'block';
-      document.getElementById('progress-label').textContent = `Question ${map[screenId][0]} of 3`;
-      document.getElementById('progress-fill').style.width = map[screenId][1];
-    } else {
-      pw.style.display = 'none';
-    }
-  }
-
-  function selectOpt(el, key, val) {
-    const parent = el.closest('.options');
-    parent.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
-    el.classList.add('selected');
-    answers[key] = val;
-
-    // Enable next button
-    const map = { debt: 'btn-next-1', credit: 'btn-next-2', goal: 'btn-next-3' };
-    if (map[key]) document.getElementById(map[key]).disabled = false;
-  }
-
-  function showProcessing() {
-    goTo('screen-processing');
-    const dots = ['dot1','dot2','dot3','dot4'];
-    dots.forEach((id, i) => {
-      setTimeout(() => {
-        if (i > 0) document.getElementById(dots[i-1]).className = 'step-dot done';
-        document.getElementById(id).className = 'step-dot active';
-      }, i * 600);
-    });
+function showProcessing() {
+  goTo('screen-processing');
+  const dots = ['dot1','dot2','dot3','dot4'];
+  dots.forEach((id, i) => {
     setTimeout(() => {
-      document.getElementById('dot4').className = 'step-dot done';
-      showResult();
-    }, 2600);
-  }
-
-  function showResult() {
-    const { debt, credit, goal } = answers;
-    let primaryOffer = 'secured';
-
-    // ── ROUTING LOGIC ──
-    // Debt relief: $10k+ debt, OR overwhelmed + fair/poor credit
-    if (debt === 'high') primaryOffer = 'debtrelief';
-    else if (debt === 'low' && (goal === 'reduce' || goal === 'both')) primaryOffer = 'debtrelief';
-    else primaryOffer = 'secured';
-
-    // ── CONTENT MAPS ──
-    const offers = {
-      debtrelief: {
-        logo: '🛡️',
-        name: 'National Debt Relief',
-        type: 'Debt Settlement Program',
-        headline: 'Good news — you may qualify for significant relief',
-        sub: 'Based on your answers, debt settlement could reduce what you owe and get you on a clear payoff timeline.',
-        highlights: [
-          'Potential to reduce enrolled debt by 25–50%',
-          'One manageable monthly deposit — no upfront fees',
-          'Free consultation with a certified debt specialist',
-          'Rated A+ with the Better Business Bureau',
-          'Works with credit cards, medical bills, personal loans'
-        ],
-        cta: 'See If I Qualify — Free Consultation →',
-        // ⚠️ Replace with your National Debt Relief affiliate link
-        link: 'YOUR_NDR_AFFILIATE_LINK_HERE',
-        secondary: 'Ready to rebuild once you\'re settled? The OpenSky® Secured Visa® requires no credit check and is a great first card post-settlement.',
-        secondaryCta: 'View OpenSky® Card Details →',
-        // ⚠️ Replace with your OpenSky affiliate link
-        secondaryLink: 'YOUR_OPENSKY_AFFILIATE_LINK_HERE'
-      },
-      secured: {
-        logo: '💳',
-        name: 'OpenSky® Secured Visa®',
-        type: 'Secured Credit Card — No Credit Check',
-        headline: 'You\'re a strong match for a credit-building card',
-        sub: 'A secured card lets you build a positive history immediately — with no credit check required to apply.',
-        highlights: [
-          'No credit check — approval is nearly guaranteed',
-          'Reports to all 3 major credit bureaus monthly',
-          'Set your own credit limit ($200–$3,000)',
-          'Low annual fee, no minimum credit score',
-          'Used by 1.2 million customers to build credit'
-        ],
-        cta: 'Apply Now — No Credit Check →',
-        // ⚠️ Replace with your OpenSky affiliate link
-        link: 'YOUR_OPENSKY_AFFILIATE_LINK_HERE',
-        secondary: 'Carrying $10k+ in debt? National Debt Relief may be able to reduce what you owe significantly — free to check eligibility.',
-        secondaryCta: 'Check Debt Relief Eligibility →',
-        // ⚠️ Replace with your NDR affiliate link
-        secondaryLink: 'YOUR_NDR_AFFILIATE_LINK_HERE'
-      }
-    };
-
-    const o = offers[primaryOffer];
-    document.getElementById('offer-logo').textContent = o.logo;
-    document.getElementById('offer-name').textContent = o.name;
-    document.getElementById('offer-type').textContent = o.type;
-    document.getElementById('result-headline').textContent = o.headline;
-    document.getElementById('result-sub').textContent = o.sub;
-
-    const hl = document.getElementById('offer-highlights');
-    hl.innerHTML = o.highlights.map(h => `<li>${h}</li>`).join('');
-
-    document.getElementById('offer-cta').textContent = o.cta;
-    document.getElementById('offer-cta').href = o.link;
-
-    document.getElementById('secondary-text').textContent = o.secondary;
-    document.getElementById('secondary-cta').textContent = o.secondaryCta;
-    document.getElementById('secondary-cta').href = o.secondaryLink;
-
-    goTo('screen-result');
-  }
-</script>
-
-<script>
-  document.getElementById('email-capture-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-
-    const input = document.getElementById('email-capture-input');
-    const successMsg = document.getElementById('email-capture-success');
-    const errorMsg = document.getElementById('email-capture-error');
-    const submitBtn = document.getElementById('email-capture-submit');
-
-    const email = input.value.trim();
-
-    successMsg.style.display = 'none';
-    errorMsg.style.display = 'none';
-
-    if (email === '') {
-      successMsg.textContent = 'No email entered — you can still continue with your matched offer.';
-      successMsg.style.display = 'block';
-      return;
-    }
-
-    submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
-
-    try {
-      const response = await fetch('/api/email-capture', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({ email })
-      });
-
-      const data = await response.json();
-
-      if (!response.ok || !data.ok) {
-        throw new Error(data.error || 'Request failed');
-      }
-
-      input.value = '';
-      successMsg.textContent = 'Thanks — your results have been sent.';
-      successMsg.style.display = 'block';
-    } catch (error) {
-      errorMsg.textContent = 'Something went wrong. Please try again.';
-      errorMsg.style.display = 'block';
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Send';
-    }
+      if (i > 0) document.getElementById(dots[i-1]).className = 'step-dot done';
+      document.getElementById(id).className = 'step-dot active';
+    }, i * 600);
   });
+  setTimeout(() => {
+    document.getElementById('dot4').className = 'step-dot done';
+    showResult();
+  }, 2600);
+}
+
+function submitEmail() {
+  const input = document.getElementById('ec-input');
+  const confirm = document.getElementById('ec-confirm');
+  if (!input.value || !input.value.includes('@')) {
+    input.style.borderColor = '#ef4444';
+    return;
+  }
+  input.style.borderColor = '';
+  input.disabled = true;
+  document.querySelector('.email-row button').disabled = true;
+  confirm.style.display = 'block';
+  // TODO: wire input.value to your email capture endpoint or ESP
+}
+
+// ═══════════════════════════════════════════════════════════════
+// OFFER LIBRARY
+// ⚠️ Replace every YOUR_*_AFFILIATE_LINK_HERE with your real link
+// ═══════════════════════════════════════════════════════════════
+const OFFERS = {
+
+  // ── DEBT RELIEF ($10k+ only) ──────────────────────────────
+  ndr: {
+    logo: '🛡️',
+    name: 'National Debt Relief',
+    type: 'Debt Settlement Program',
+    headline: 'You may qualify for significant debt reduction',
+    sub: 'National Debt Relief negotiates directly with creditors to reduce what you owe. Free consultation, no obligation.',
+    highlights: [
+      'Potential to reduce enrolled debt — free to check',
+      'No upfront fees — you pay only after settlement',
+      'Free consultation with a certified debt specialist',
+      'Works with credit cards, medical bills, personal loans'
+    ],
+    cta: 'Check My Eligibility — Free →',
+    link: 'https://www.nationaldebtrelief.com'
+  },
+
+  jg: {
+    logo: '⚖️',
+    name: 'JG Wentworth Debt Relief',
+    type: 'Debt Settlement Program',
+    headline: 'You may qualify for JG Wentworth\'s debt relief program',
+    sub: 'JG Wentworth works with creditors to reduce your total balance. Free consultation to find out your options.',
+    highlights: [
+      'Negotiate to reduce total debt owed',
+      'One manageable monthly program deposit',
+      'No upfront fees — pay only after results',
+      'Free no-obligation consultation'
+    ],
+    cta: 'Check My Eligibility — Free →',
+    link: 'https://www.jgwentworth.com'
+  },
+
+  freedom: {
+    logo: '🏛️',
+    name: 'Freedom Debt Relief',
+    type: 'Debt Settlement Program',
+    headline: 'Freedom Debt Relief may be able to help',
+    sub: 'One of the largest accredited debt settlement companies in the US. Free consultation to review your options.',
+    highlights: [
+      'Accredited member of the American Fair Credit Council',
+      'No upfront fees — only pay after debts are settled',
+      'Dedicated debt consultant throughout the process',
+      'Free no-obligation consultation'
+    ],
+    cta: 'Check My Eligibility — Free →',
+    link: 'https://www.freedomdebtrelief.com'
+  },
+
+  // ── CREDIT REPAIR ─────────────────────────────────────────
+  lexington: {
+    logo: '📋',
+    name: 'Lexington Law',
+    type: 'Credit Repair Service',
+    headline: 'Credit repair may be your strongest next step',
+    sub: 'Lexington Law works to challenge inaccurate negative items on your credit report and help improve your score.',
+    highlights: [
+      'Challenge inaccurate items on all 3 bureau reports',
+      'Dedicated paralegal support',
+      'Track your score improvement over time',
+      'Cancel anytime — no long-term commitment'
+    ],
+    cta: 'See How It Works — Free Consultation →',
+    link: 'https://www.lexingtonlaw.com'
+  },
+
+  // ── PERSONAL LOAN CONSOLIDATION ───────────────────────────
+  lendingtree: {
+    logo: '🌳',
+    name: 'LendingTree',
+    type: 'Personal Loan Comparison',
+    headline: 'A consolidation loan may lower your payments',
+    sub: 'LendingTree lets you compare personal loan offers from multiple lenders in one place — no obligation to accept.',
+    highlights: [
+      'Compare offers from multiple lenders at once',
+      'Checking rates does not affect your credit score',
+      'Consolidate multiple debts into one payment',
+      'Loans available from $1,000 to $50,000'
+    ],
+    cta: 'Check My Loan Options — Free →',
+    link: 'https://www.lendingtree.com'
+  },
+
+  upstart: {
+    logo: '🚀',
+    name: 'Upstart Personal Loans',
+    type: 'Personal Loan — Fast Decisions',
+    headline: 'A personal loan could consolidate your debt',
+    sub: 'Upstart uses more than just credit score to evaluate your application — checking your rate takes 2 minutes with no credit impact.',
+    highlights: [
+      'Check your rate in 2 minutes — no hard credit pull',
+      'Loan amounts from $1,000 to $50,000',
+      'Consolidate multiple balances into one payment',
+      'Fast funding — as soon as 1 business day'
+    ],
+    cta: 'Check My Rate — No Credit Impact →',
+    link: 'https://www.upstart.com'
+  },
+
+  // ── SECURED CARDS ─────────────────────────────────────────
+  opensky: {
+    logo: '💳',
+    name: 'OpenSky® Secured Visa®',
+    type: 'Secured Credit Card — No Credit Check',
+    headline: 'Build credit with no credit check required',
+    sub: 'OpenSky reports to all 3 major credit bureaus every month. No credit check to apply — approval is nearly guaranteed.',
+    highlights: [
+      'No credit check required to apply',
+      'Reports to all 3 major credit bureaus monthly',
+      'Set your own credit limit from $200 to $3,000',
+      'Used by over 1.2 million customers to build credit'
+    ],
+    cta: 'Apply Now — No Credit Check →',
+    link: 'https://www.openskycc.com'
+  },
+
+  chime: {
+    logo: '💚',
+    name: 'Chime Credit Builder',
+    type: 'Credit Builder Card — No Annual Fee',
+    headline: 'Build credit with no annual fee and no interest',
+    sub: 'Chime Credit Builder is a secured card with no annual fee, no interest, and no credit check. Reports to all 3 bureaus.',
+    highlights: [
+      'No annual fee and no interest charges',
+      'No credit check to open',
+      'Reports to all 3 major credit bureaus',
+      'No minimum security deposit required'
+    ],
+    cta: 'Get Started — No Annual Fee →',
+    link: 'https://www.chime.com'
+  },
+
+  self: {
+    logo: '🏦',
+    name: 'Self Credit Builder',
+    type: 'Credit Builder Account',
+    headline: 'Build credit and savings at the same time',
+    sub: 'Self\'s credit builder account reports to all 3 bureaus and helps you save money while establishing a credit history.',
+    highlights: [
+      'No hard credit check to open',
+      'Reports to all 3 major credit bureaus',
+      'Build savings while building credit',
+      'Plans starting under $25 per month'
+    ],
+    cta: 'Get Started — Build Credit Today →',
+    link: 'https://www.self.inc'
+  }
+};
+
+// ═══════════════════════════════════════════════════════════════
+// ROUTING LOGIC
+// Three variables: debt (none/mid/high), credit (poor/fair/good), goal (reduce/build/both)
+// ═══════════════════════════════════════════════════════════════
+function getOffers(debt, credit, goal) {
+
+  // ── $10,000 OR MORE ───────────────────────────────────────
+  if (debt === 'high') {
+    if (goal === 'reduce' || goal === 'both') {
+      // Primary: NDR. Secondary: JG as alternative.
+      return {
+        primary: OFFERS.ndr,
+        secondary: {
+          text: 'JG Wentworth is another highly rated debt settlement program worth comparing. Free consultation, no obligation.',
+          cta: 'Check JG Wentworth →',
+          link: OFFERS.jg.link
+        }
+      };
+    }
+    if (goal === 'build') {
+      // $10k+ but only wants to build credit — still show debt relief first, it's the right product
+      return {
+        primary: OFFERS.ndr,
+        secondary: {
+          text: 'Once your debt is settled, OpenSky® Secured Visa® is a great first step to rebuilding your credit with no credit check.',
+          cta: 'View OpenSky® Details →',
+          link: OFFERS.opensky.link
+        }
+      };
+    }
+  }
+
+  // ── $2,000 – $9,999 ───────────────────────────────────────
+  if (debt === 'mid') {
+
+    if (goal === 'reduce') {
+      if (credit === 'good') {
+        // Good credit + reduce debt → personal loan consolidation is the right product
+        return {
+          primary: OFFERS.lendingtree,
+          secondary: {
+            text: 'Upstart is another option to compare personal loan rates — checking takes 2 minutes with no credit score impact.',
+            cta: 'Check Upstart Rates →',
+            link: OFFERS.upstart.link
+          }
+        };
+      }
+      if (credit === 'fair') {
+        // Fair credit + mid debt → Upstart primary, Lexington Law to fix credit as secondary
+        return {
+          primary: OFFERS.upstart,
+          secondary: {
+            text: 'Improving your credit score with Lexington Law could help you qualify for better loan rates in the future.',
+            cta: 'See How Lexington Law Works →',
+            link: OFFERS.lexington.link
+          }
+        };
+      }
+      if (credit === 'poor') {
+        // Poor credit + mid debt → credit repair is the real first step
+        return {
+          primary: OFFERS.lexington,
+          secondary: {
+            text: 'While working on your credit, an OpenSky® Secured Card can help you start building a positive payment history now.',
+            cta: 'View OpenSky® Details →',
+            link: OFFERS.opensky.link
+          }
+        };
+      }
+    }
+
+    if (goal === 'build') {
+      if (credit === 'poor') {
+        return {
+          primary: OFFERS.opensky,
+          secondary: {
+            text: 'Self Credit Builder is another way to build credit and savings simultaneously — no hard credit check required.',
+            cta: 'See Self Credit Builder →',
+            link: OFFERS.self.link
+          }
+        };
+      }
+      if (credit === 'fair') {
+        // Fair credit + build → Lexington Law to repair, Chime as card
+        return {
+          primary: OFFERS.lexington,
+          secondary: {
+            text: 'Chime Credit Builder is a no-fee, no-interest card that reports to all 3 bureaus — a great companion to credit repair.',
+            cta: 'See Chime Credit Builder →',
+            link: OFFERS.chime.link
+          }
+        };
+      }
+      if (credit === 'good') {
+        // Good credit + build → Chime primary, Self secondary
+        return {
+          primary: OFFERS.chime,
+          secondary: {
+            text: 'Self Credit Builder is another solid option that helps you build both credit history and savings at the same time.',
+            cta: 'See Self Credit Builder →',
+            link: OFFERS.self.link
+          }
+        };
+      }
+    }
+
+    if (goal === 'both') {
+      if (credit === 'poor') {
+        return {
+          primary: OFFERS.opensky,
+          secondary: {
+            text: 'Lexington Law can help challenge inaccurate negative items on your report while you build new positive history.',
+            cta: 'See Lexington Law →',
+            link: OFFERS.lexington.link
+          }
+        };
+      }
+      if (credit === 'fair') {
+        return {
+          primary: OFFERS.lexington,
+          secondary: {
+            text: 'Upstart may be able to consolidate your debt into one lower payment while you work on your credit.',
+            cta: 'Check Upstart Rates →',
+            link: OFFERS.upstart.link
+          }
+        };
+      }
+      if (credit === 'good') {
+        return {
+          primary: OFFERS.lendingtree,
+          secondary: {
+            text: 'Chime Credit Builder helps maintain and grow your credit while you pay down your consolidated loan.',
+            cta: 'See Chime Credit Builder →',
+            link: OFFERS.chime.link
+          }
+        };
+      }
+    }
+  }
+
+  // ── UNDER $2,000 / LITTLE TO NONE ─────────────────────────
+  if (debt === 'none') {
+
+    if (goal === 'reduce' || goal === 'both') {
+      // Very little debt — focus on credit building, not debt relief
+      if (credit === 'poor') {
+        return {
+          primary: OFFERS.opensky,
+          secondary: {
+            text: 'Self Credit Builder lets you build credit and savings simultaneously — no hard credit check required.',
+            cta: 'See Self Credit Builder →',
+            link: OFFERS.self.link
+          }
+        };
+      }
+      if (credit === 'fair') {
+        return {
+          primary: OFFERS.lexington,
+          secondary: {
+            text: 'Chime Credit Builder is a no-fee card that reports to all 3 bureaus and can help you build positive history.',
+            cta: 'See Chime Credit Builder →',
+            link: OFFERS.chime.link
+          }
+        };
+      }
+      if (credit === 'good') {
+        return {
+          primary: OFFERS.chime,
+          secondary: {
+            text: 'Self Credit Builder is a great complement — build savings and credit history at the same time.',
+            cta: 'See Self Credit Builder →',
+            link: OFFERS.self.link
+          }
+        };
+      }
+    }
+
+    if (goal === 'build') {
+      if (credit === 'poor') {
+        return {
+          primary: OFFERS.opensky,
+          secondary: {
+            text: 'Self Credit Builder is another option — build credit and savings with no hard credit check.',
+            cta: 'See Self Credit Builder →',
+            link: OFFERS.self.link
+          }
+        };
+      }
+      if (credit === 'fair') {
+        return {
+          primary: OFFERS.lexington,
+          secondary: {
+            text: 'OpenSky® Secured Visa® helps build positive payment history now while Lexington Law works on your report.',
+            cta: 'View OpenSky® Details →',
+            link: OFFERS.opensky.link
+          }
+        };
+      }
+      if (credit === 'good') {
+        return {
+          primary: OFFERS.chime,
+          secondary: {
+            text: 'Self Credit Builder adds a credit builder account to your profile — good for credit mix and savings.',
+            cta: 'See Self Credit Builder →',
+            link: OFFERS.self.link
+          }
+        };
+      }
+    }
+  }
+
+  // ── FALLBACK (should not be reached) ──────────────────────
+  return {
+    primary: OFFERS.opensky,
+    secondary: {
+      text: 'Self Credit Builder is another solid way to establish credit history with no hard credit check.',
+      cta: 'See Self Credit Builder →',
+      link: OFFERS.self.link
+    }
+  };
+}
+
+function showResult() {
+  const { debt, credit, goal } = answers;
+  const result = getOffers(debt, credit, goal);
+  const p = result.primary;
+  const s = result.secondary;
+
+  document.getElementById('offer-logo').textContent = p.logo;
+  document.getElementById('offer-name').textContent = p.name;
+  document.getElementById('offer-type').textContent = p.type;
+  document.getElementById('result-headline').textContent = p.headline;
+  document.getElementById('result-sub').textContent = p.sub;
+  document.getElementById('offer-highlights').innerHTML = p.highlights.map(h => '<li>' + h + '</li>').join('');
+  document.getElementById('offer-cta').textContent = p.cta;
+  document.getElementById('offer-cta').href = p.link;
+  document.getElementById('secondary-text').textContent = s.text;
+  document.getElementById('secondary-cta').textContent = s.cta;
+  document.getElementById('secondary-cta').href = s.link;
+
+  goTo('screen-result');
+}
 </script>
+
 </body>
 </html>

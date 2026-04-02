@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PNBV6TXX');</script>
+<!-- End Google Tag Manager -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<title>Find Your Debt Relief Match — Free in 60 Seconds</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f2342;
+    --navy-mid: #1a3558;
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --cream: #faf8f4;
+    --warm-white: #ffffff;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --success: #059669;
+    --gold: #d4a853;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--navy);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    color: #fff;
+    font-size: 1.35rem;
+    letter-spacing: -0.3px;
+  }
+  .logo span { color: var(--teal-light); }
+  .secure-badge {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .secure-badge svg { width: 13px; height: 13px; fill: var(--teal-light); }
+
+  /* ── PROGRESS BAR ── */
+  #progress-wrap {
+    background: var(--navy-mid);
+    padding: 10px 24px;
+    display: none;
+  }
+  .progress-label {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    margin-bottom: 5px;
+  }
+  .progress-track {
+    background: rgba(255,255,255,0.12);
+    border-radius: 99px;
+    height: 5px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--teal-light);
+    border-radius: 99px;
+    transition: width 0.4s ease;
+  }
+
+  /* ── MAIN CONTAINER ── */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px 16px 60px;
+  }
+
+  .card {
+    background: var(--warm-white);
+    border-radius: 16px;
+    box-shadow: 0 4px 32px rgba(15,35,66,0.10);
+    width: 100%;
+    max-width: 560px;
+    padding: 44px 44px 40px;
+    animation: fadeUp 0.45s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── LANDING SCREEN ── */
+  .eyebrow {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2rem;
+    line-height: 1.2;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+  h1 em { font-style: italic; color: var(--teal); }
+  .sub {
+    font-size: 0.97rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 30px;
+  }
+
+  .trust-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+  }
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.8rem;
+    color: var(--muted);
+  }
+  .trust-item svg { width: 15px; height: 15px; flex-shrink: 0; }
+
+  .btn-primary {
+    display: block;
+    width: 100%;
+    background: var(--teal);
+    color: #fff;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+    padding: 16px 24px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    text-align: center;
+  }
+  .btn-primary:hover { background: var(--teal-light); }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-sub {
+    text-align: center;
+    font-size: 0.75rem;
+    color: #94a3b8;
+    margin-top: 10px;
+  }
+
+  /* ── QUIZ SCREENS ── */
+  .q-label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 10px;
+  }
+  .q-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.55rem;
+    line-height: 1.3;
+    color: var(--navy);
+    margin-bottom: 26px;
+  }
+
+  .options { display: flex; flex-direction: column; gap: 12px; }
+  .opt {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 15px 18px;
+    cursor: pointer;
+    transition: border-color 0.18s, background 0.18s, transform 0.1s;
+    user-select: none;
+  }
+  .opt:hover { border-color: var(--teal); background: #f0fdfa; }
+  .opt.selected { border-color: var(--teal); background: #f0fdfa; }
+  .opt-icon {
+    width: 36px; height: 36px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .opt-text { flex: 1; }
+  .opt-title { font-weight: 600; font-size: 0.95rem; color: var(--navy); }
+  .opt-desc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+  .opt-check {
+    width: 22px; height: 22px;
+    border: 2px solid var(--border);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .opt.selected .opt-check {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+  .opt.selected .opt-check::after {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #fff;
+    display: block;
+  }
+
+  .nav-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 28px;
+    gap: 12px;
+  }
+  .btn-back {
+    background: none;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    padding: 11px 20px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9rem;
+    color: var(--muted);
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .btn-back:hover { border-color: var(--navy); color: var(--navy); }
+  .btn-next {
+    flex: 1;
+    background: var(--navy);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.97rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-next:hover { background: var(--navy-mid); }
+  .btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
+
+  /* ── PROCESSING ── */
+  #screen-processing { text-align: center; padding: 20px 0; }
+  .spinner-wrap { margin-bottom: 28px; }
+  .spinner {
+    width: 56px; height: 56px;
+    border: 4px solid var(--border);
+    border-top-color: var(--teal);
+    border-radius: 50%;
+    animation: spin 0.85s linear infinite;
+    margin: 0 auto 16px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .processing-steps { list-style: none; text-align: left; display: inline-block; margin-top: 8px; }
+  .processing-steps li {
+    font-size: 0.88rem;
+    color: var(--muted);
+    padding: 4px 0;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+  }
+  .step-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--border);
+    flex-shrink: 0;
+    transition: background 0.3s;
+  }
+  .step-dot.active { background: var(--teal); }
+  .step-dot.done { background: var(--success); }
+
+  /* ── RESULTS ── */
+  #screen-result .match-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+  .match-badge {
+    display: inline-block;
+    background: #d1fae5;
+    color: var(--success);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 99px;
+    margin-bottom: 14px;
+  }
+  #screen-result h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  #screen-result .sub { margin-bottom: 0; }
+
+  .offer-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 24px 0;
+  }
+  .offer-header {
+    background: var(--navy);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .offer-logo {
+    width: 44px; height: 44px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .offer-name { color: #fff; font-weight: 600; font-size: 1rem; }
+  .offer-type { color: #94a3b8; font-size: 0.78rem; }
+  .offer-body { padding: 20px; }
+  .offer-highlights { list-style: none; margin-bottom: 20px; }
+  .offer-highlights li {
+    font-size: 0.9rem;
+    color: var(--navy);
+    padding: 5px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .offer-highlights li::before {
+    content: '✓';
+    color: var(--success);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .btn-offer {
+    display: block;
+    width: 100%;
+    background: var(--teal);
+    color: #fff;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 15px 24px;
+    border-radius: 9px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-offer:hover { background: var(--teal-light); }
+
+  .secondary-offer {
+    margin-top: 16px;
+    padding: 16px;
+    background: #f8fafc;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .secondary-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .secondary-offer p {
+    font-size: 0.88rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .btn-secondary {
+    display: inline-block;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-decoration: none;
+    border: 1.5px solid var(--teal);
+    border-radius: 7px;
+    padding: 9px 18px;
+    background: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, color 0.2s;
+  }
+  .btn-secondary:hover { background: var(--teal); color: #fff; }
+
+  .disclaimer {
+    font-size: 0.72rem;
+    color: #94a3b8;
+    line-height: 1.6;
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy);
+    padding: 18px 24px;
+    text-align: center;
+    font-size: 0.72rem;
+    color: #475569;
+    line-height: 1.7;
+  }
+  footer a { color: #64748b; text-decoration: none; }
+  footer a:hover { color: #94a3b8; }
+
+  /* ── HIDDEN ── */
+  .screen { display: none; }
+  .screen.active { display: block; animation: fadeUp 0.35s ease both; }
+
+  @media (max-width: 520px) {
+    .card { padding: 28px 22px 28px; }
+    h1 { font-size: 1.6rem; }
+    .trust-row { gap: 12px; }
+  }
+
+    /* ── EMAIL CAPTURE ── */
+  .email-capture-box {
+    margin-top: 20px;
+    padding: 22px 20px 18px;
+    background: #f8f7f3;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .email-capture-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .email-capture-sub {
+    font-size: 0.9rem;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .email-capture-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .email-capture-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #d6d3cd;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+  }
+
+  .email-capture-form input:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.10);
+  }
+
+  .email-capture-form button {
+    padding: 14px 18px;
+    border: 1px solid #d6d3cd;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .email-capture-form button:hover {
+    background: #f1efe9;
+    border-color: #c9c5bd;
+  }
+
+  .email-capture-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .email-capture-success {
+    font-size: 0.88rem;
+    color: var(--success);
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  .email-capture-error {
+    font-size: 0.88rem;
+    color: #b91c1c;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 520px) {
+    .email-capture-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .email-capture-form button {
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNBV6TXX"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<header>
+  <div class="logo">Debt<span>Compass</span> Financial</div>
+  <div class="secure-badge">
+    <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    256-bit Secure
+  </div>
+</header>
+
+<div id="progress-wrap">
+  <div class="progress-label" id="progress-label">Question 1 of 3</div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill" style="width:33%"></div>
+  </div>
+</div>
+
+<main>
+<div class="card">
+
+  <!-- ══ SCREEN 0: LANDING ══ -->
+  <div class="screen active" id="screen-landing">
+    <div class="eyebrow">Free · No Credit Pull · 60 Seconds</div>
+    <h1>Find your <em>best</em> financial option — matched to your situation</h1>
+    <p class="sub">Answer 3 quick questions and we'll show you the highest-rated programs people in your exact situation are using right now.</p>
+    <div class="trust-row">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        No credit check required
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        Results in under 60 seconds
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        Free — no obligation to enroll
+      </div>
+    </div>
+    <button class="btn-primary" onclick="startQuiz()">See My Options →</button>
+    <p class="btn-sub">Free service. We're compensated by our partners if you apply.</p>
+  </div>
+
+  <!-- ══ SCREEN 1: Q1 — DEBT ══ -->
+  <div class="screen" id="screen-q1">
+    <div class="q-label">Question 1 of 3</div>
+    <div class="q-text">How much unsecured debt are you currently carrying?</div>
+    <div class="options">
+      <div class="opt" onclick="selectOpt(this,'debt','none')">
+        <div class="opt-icon">💳</div>
+        <div class="opt-text">
+          <div class="opt-title">Little to none</div>
+          <div class="opt-desc">Under $2,000 in credit card or personal loan debt</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="opt" onclick="selectOpt(this,'debt','low')">
+        <div class="opt-icon">📊</div>
+        <div class="opt-text">
+          <div class="opt-title">$2,000 – $9,999</div>
+          <div class="opt-desc">Manageable but I want a better path forward</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="opt" onclick="selectOpt(this,'debt','high')">
+        <div class="opt-icon">⚠️</div>
+        <div class="opt-text">
+          <div class="opt-title">$10,000 or more</div>
+          <div class="opt-desc">Feeling overwhelmed — looking for real relief</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="goTo('screen-landing')">← Back</button>
+      <button class="btn-next" id="btn-next-1" disabled onclick="goTo('screen-q2')">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 2: Q2 — CREDIT ══ -->
+  <div class="screen" id="screen-q2">
+    <div class="q-label">Question 2 of 3</div>
+    <div class="q-text">What's your approximate credit score?</div>
+    <div class="options">
+      <div class="opt" onclick="selectOpt(this,'credit','poor')">
+        <div class="opt-icon">🔴</div>
+        <div class="opt-text">
+          <div class="opt-title">Below 580</div>
+          <div class="opt-desc">Poor — I've had missed payments or collections</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="opt" onclick="selectOpt(this,'credit','fair')">
+        <div class="opt-icon">🟡</div>
+        <div class="opt-text">
+          <div class="opt-title">580 – 650</div>
+          <div class="opt-desc">Fair — working on improving it</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="opt" onclick="selectOpt(this,'credit','good')">
+        <div class="opt-icon">🟢</div>
+        <div class="opt-text">
+          <div class="opt-title">650 or above</div>
+          <div class="opt-desc">Good or better — I just need the right offer</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="goTo('screen-q1')">← Back</button>
+      <button class="btn-next" id="btn-next-2" disabled onclick="goTo('screen-q3')">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 3: Q3 — GOAL ══ -->
+  <div class="screen" id="screen-q3">
+    <div class="q-label">Question 3 of 3</div>
+    <div class="q-text">What's your primary goal right now?</div>
+    <div class="options">
+      <div class="opt" onclick="selectOpt(this,'goal','reduce')">
+        <div class="opt-icon">📉</div>
+        <div class="opt-text">
+          <div class="opt-title">Reduce or eliminate debt</div>
+          <div class="opt-desc">Lower my monthly payments and get out from under it</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="opt" onclick="selectOpt(this,'goal','build')">
+        <div class="opt-icon">🏗️</div>
+        <div class="opt-text">
+          <div class="opt-title">Build or rebuild my credit</div>
+          <div class="opt-desc">Establish a positive payment history</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+      <div class="opt" onclick="selectOpt(this,'goal','both')">
+        <div class="opt-icon">🎯</div>
+        <div class="opt-text">
+          <div class="opt-title">Both — reduce debt AND build credit</div>
+          <div class="opt-desc">A complete fresh start</div>
+        </div>
+        <div class="opt-check"></div>
+      </div>
+    </div>
+    <div class="nav-row">
+      <button class="btn-back" onclick="goTo('screen-q2')">← Back</button>
+      <button class="btn-next" id="btn-next-3" disabled onclick="showProcessing()">See My Match →</button>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 4: PROCESSING ══ -->
+  <div class="screen" id="screen-processing">
+    <div style="text-align:center; padding: 20px 0;">
+      <div class="spinner-wrap">
+        <div class="spinner"></div>
+        <div style="font-family:'DM Serif Display',serif; font-size:1.3rem; color:var(--navy); margin-bottom:6px;">Finding your best match…</div>
+        <div style="font-size:0.85rem; color:var(--muted);">Comparing 40+ programs in real time</div>
+      </div>
+      <ul class="processing-steps" id="step-list">
+        <li><div class="step-dot" id="dot1"></div> Reviewing your debt profile</li>
+        <li><div class="step-dot" id="dot2"></div> Checking credit eligibility</li>
+        <li><div class="step-dot" id="dot3"></div> Matching to top-rated programs</li>
+        <li><div class="step-dot" id="dot4"></div> Preparing your personalized offer</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ══ SCREEN 5: RESULTS ══ -->
+  <div class="screen" id="screen-result">
+    <div class="match-header">
+      <div class="match-badge">✓ Match Found</div>
+      <h2 id="result-headline">Your Top Recommendation</h2>
+      <p class="sub" id="result-sub"></p>
+    </div>
+
+    <!-- PRIMARY OFFER -->
+    <div class="offer-card">
+      <div class="offer-header">
+        <div class="offer-logo" id="offer-logo">💰</div>
+        <div>
+          <div class="offer-name" id="offer-name">National Debt Relief</div>
+          <div class="offer-type" id="offer-type">Debt Relief Program</div>
+        </div>
+      </div>
+      <div class="offer-body">
+        <ul class="offer-highlights" id="offer-highlights">
+          <li>Could reduce your debt by up to 50%</li>
+          <li>No upfront fees — you pay only when settled</li>
+          <li>Free consultation, no obligation</li>
+          <li>Rated A+ with the Better Business Bureau</li>
+        </ul>
+        <!-- ⚠️ REPLACE href WITH YOUR AFFILIATE LINK -->
+        <a class="btn-offer" href="YOUR_AFFILIATE_LINK_HERE" id="offer-cta" target="_blank" rel="noopener">
+          See If I Qualify — Free →
+        </a>
+      </div>
+    </div>
+
+    <!-- SECONDARY OFFER -->
+    <div class="secondary-offer" id="secondary-wrap">
+      <div class="secondary-label">Also worth considering</div>
+      <p id="secondary-text">Want to start rebuilding credit at the same time? The OpenSky® Secured Visa® requires no credit check and reports to all 3 bureaus.</p>
+      <!-- ⚠️ REPLACE href WITH YOUR SECONDARY AFFILIATE LINK -->
+      <a class="btn-secondary" href="YOUR_SECONDARY_AFFILIATE_LINK_HERE" id="secondary-cta" target="_blank" rel="noopener">
+        View Card Details →
+      </a>
+    </div>
+    <div class="email-capture-box" id="email-capture-box">
+  <h3 class="email-capture-title">Get your results emailed to you</h3>
+  <p class="email-capture-sub">
+    Optional — enter your email and we'll send your matched options so you can review them later.
+  </p>
+
+  <form id="email-capture-form" class="email-capture-form">
+    <input
+      type="email"
+      id="email-capture-input"
+      name="email"
+      placeholder="your@email.com"
+      autocomplete="email"
+    />
+    <button type="submit" id="email-capture-submit">Send</button>
+  </form>
+
+  <p class="email-capture-note">
+    No spam. Unsubscribe anytime. We may send relevant offers based on your profile.
+  </p>
+
+  <p id="email-capture-success" class="email-capture-success" style="display:none;">
+    Thanks — your results have been sent.
+  </p>
+
+  <p id="email-capture-error" class="email-capture-error" style="display:none;">
+    Something went wrong. Please try again.
+  </p>
+</div>
+
+    <p class="disclaimer">
+      Results are based on self-reported information and are for informational purposes only. 
+      We do not perform credit checks. Clicking "See If I Qualify" will take you to a partner's 
+      site where additional information may be required. We may receive compensation if you apply 
+      or are approved. This is not a guarantee of approval or specific savings amounts.
+    </p>
+  </div>
+
+</div><!-- /card -->
+</main>
+
+<footer>
+  © 2025 DebtCompass Financial · <a href="legal.html#privacy">Privacy Policy</a> · <a href="legal.html#terms">Terms of Service</a> · <a href="legal.html#disclosure">Advertiser Disclosure</a><br>
+  This site is not affiliated with any government agency. Results may vary.
+</footer>
+
+<script>
+  const answers = {};
+
+  function startQuiz() {
+    document.getElementById('progress-wrap').style.display = 'block';
+    goTo('screen-q1');
+  }
+
+  function goTo(screenId) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    document.getElementById(screenId).classList.add('active');
+    updateProgress(screenId);
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  }
+
+  function updateProgress(screenId) {
+    const map = { 'screen-q1': [1, '33%'], 'screen-q2': [2, '66%'], 'screen-q3': [3, '100%'] };
+    const pw = document.getElementById('progress-wrap');
+    if (map[screenId]) {
+      pw.style.display = 'block';
+      document.getElementById('progress-label').textContent = `Question ${map[screenId][0]} of 3`;
+      document.getElementById('progress-fill').style.width = map[screenId][1];
+    } else {
+      pw.style.display = 'none';
+    }
+  }
+
+  function selectOpt(el, key, val) {
+    const parent = el.closest('.options');
+    parent.querySelectorAll('.opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+    answers[key] = val;
+
+    // Enable next button
+    const map = { debt: 'btn-next-1', credit: 'btn-next-2', goal: 'btn-next-3' };
+    if (map[key]) document.getElementById(map[key]).disabled = false;
+  }
+
+  function showProcessing() {
+    goTo('screen-processing');
+    const dots = ['dot1','dot2','dot3','dot4'];
+    dots.forEach((id, i) => {
+      setTimeout(() => {
+        if (i > 0) document.getElementById(dots[i-1]).className = 'step-dot done';
+        document.getElementById(id).className = 'step-dot active';
+      }, i * 600);
+    });
+    setTimeout(() => {
+      document.getElementById('dot4').className = 'step-dot done';
+      showResult();
+    }, 2600);
+  }
+
+  function showResult() {
+    const { debt, credit, goal } = answers;
+    let primaryOffer = 'secured';
+
+    // ── ROUTING LOGIC ──
+    // Debt relief: $10k+ debt, OR overwhelmed + fair/poor credit
+    if (debt === 'high') primaryOffer = 'debtrelief';
+    else if (debt === 'low' && (goal === 'reduce' || goal === 'both')) primaryOffer = 'debtrelief';
+    else primaryOffer = 'secured';
+
+    // ── CONTENT MAPS ──
+    const offers = {
+      debtrelief: {
+        logo: '🛡️',
+        name: 'National Debt Relief',
+        type: 'Debt Settlement Program',
+        headline: 'Good news — you may qualify for significant relief',
+        sub: 'Based on your answers, debt settlement could reduce what you owe and get you on a clear payoff timeline.',
+        highlights: [
+          'Potential to reduce enrolled debt by 25–50%',
+          'One manageable monthly deposit — no upfront fees',
+          'Free consultation with a certified debt specialist',
+          'Rated A+ with the Better Business Bureau',
+          'Works with credit cards, medical bills, personal loans'
+        ],
+        cta: 'See If I Qualify — Free Consultation →',
+        // ⚠️ Replace with your National Debt Relief affiliate link
+        link: 'YOUR_NDR_AFFILIATE_LINK_HERE',
+        secondary: 'Ready to rebuild once you\'re settled? The OpenSky® Secured Visa® requires no credit check and is a great first card post-settlement.',
+        secondaryCta: 'View OpenSky® Card Details →',
+        // ⚠️ Replace with your OpenSky affiliate link
+        secondaryLink: 'YOUR_OPENSKY_AFFILIATE_LINK_HERE'
+      },
+      secured: {
+        logo: '💳',
+        name: 'OpenSky® Secured Visa®',
+        type: 'Secured Credit Card — No Credit Check',
+        headline: 'You\'re a strong match for a credit-building card',
+        sub: 'A secured card lets you build a positive history immediately — with no credit check required to apply.',
+        highlights: [
+          'No credit check — approval is nearly guaranteed',
+          'Reports to all 3 major credit bureaus monthly',
+          'Set your own credit limit ($200–$3,000)',
+          'Low annual fee, no minimum credit score',
+          'Used by 1.2 million customers to build credit'
+        ],
+        cta: 'Apply Now — No Credit Check →',
+        // ⚠️ Replace with your OpenSky affiliate link
+        link: 'YOUR_OPENSKY_AFFILIATE_LINK_HERE',
+        secondary: 'Carrying $10k+ in debt? National Debt Relief may be able to reduce what you owe significantly — free to check eligibility.',
+        secondaryCta: 'Check Debt Relief Eligibility →',
+        // ⚠️ Replace with your NDR affiliate link
+        secondaryLink: 'YOUR_NDR_AFFILIATE_LINK_HERE'
+      }
+    };
+
+    const o = offers[primaryOffer];
+    document.getElementById('offer-logo').textContent = o.logo;
+    document.getElementById('offer-name').textContent = o.name;
+    document.getElementById('offer-type').textContent = o.type;
+    document.getElementById('result-headline').textContent = o.headline;
+    document.getElementById('result-sub').textContent = o.sub;
+
+    const hl = document.getElementById('offer-highlights');
+    hl.innerHTML = o.highlights.map(h => `<li>${h}</li>`).join('');
+
+    document.getElementById('offer-cta').textContent = o.cta;
+    document.getElementById('offer-cta').href = o.link;
+
+    document.getElementById('secondary-text').textContent = o.secondary;
+    document.getElementById('secondary-cta').textContent = o.secondaryCta;
+    document.getElementById('secondary-cta').href = o.secondaryLink;
+
+    goTo('screen-result');
+  }
+</script>
+
+<script>
+  document.getElementById('email-capture-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const input = document.getElementById('email-capture-input');
+    const successMsg = document.getElementById('email-capture-success');
+    const errorMsg = document.getElementById('email-capture-error');
+    const submitBtn = document.getElementById('email-capture-submit');
+
+    const email = input.value.trim();
+
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    if (email === '') {
+      successMsg.textContent = 'No email entered — you can still continue with your matched offer.';
+      successMsg.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      const response = await fetch('/api/email-capture', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.ok) {
+        throw new Error(data.error || 'Request failed');
+      }
+
+      input.value = '';
+      successMsg.textContent = 'Thanks — your results have been sent.';
+      successMsg.style.display = 'block';
+    } catch (error) {
+      errorMsg.textContent = 'Something went wrong. Please try again.';
+      errorMsg.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send';
+    }
+  });
+</script>
+</body>
+</html>
