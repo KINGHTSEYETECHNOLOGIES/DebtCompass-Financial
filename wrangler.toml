@@ -7,7 +7,7 @@ directory = "."
 
 [[send_email]]
 name = "ROSS_EMAIL"
-destination_address = "rossmfine@gmail.com"
+destination_address = "rkrai3122@gmail.com"
 
 [observability.logs]
 enabled = true
