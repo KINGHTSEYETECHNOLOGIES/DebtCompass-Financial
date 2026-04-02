@@ -48,7 +48,13 @@ export default {
 
         return json({ ok: true }, 200);
       } catch (error) {
-        return json({ ok: false, error: "Failed to send email" }, 500);
+        return json(
+            {
+                ok: false,
+                error: error instanceof Error ? error.message : String(error),
+            },
+            500
+        );
       }
     }
 
