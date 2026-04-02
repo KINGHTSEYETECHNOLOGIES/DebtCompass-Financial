@@ -39,9 +39,9 @@ export default {
         ].join("\n");
 
         const message = new EmailMessage(
-          "info@debtcompassfinancial.com",
-          "rossmfine@gmail.com",
-          rawMessage
+            "info@debtcompassfinancial.com",
+            email,
+            rawMessage
         );
 
         await env.ROSS_EMAIL.send(message);
