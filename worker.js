@@ -27,7 +27,7 @@ export default {
         }
 
         const rawMessage = [
-          "Subject: DebtCompass Financial - Funnel Email Capture",
+          `Subject: New Funnel Email - ${email}`,
           "MIME-Version: 1.0",
           "Content-Type: text/plain; charset=UTF-8",
           "",
