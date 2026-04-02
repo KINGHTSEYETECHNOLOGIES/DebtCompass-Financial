@@ -40,7 +40,7 @@ export default {
 
         const message = new EmailMessage(
             "info@debtcompassfinancial.com",
-            email,
+            "rossmfine@gmail.com",
             rawMessage
         );
 
