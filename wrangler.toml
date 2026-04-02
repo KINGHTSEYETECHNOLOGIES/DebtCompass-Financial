@@ -1,0 +1,10 @@
+name = "debtcompassfinancial"
+main = "worker.js"
+compatibility_date = "2026-04-01"
+
+[assets]
+directory = "."
+
+[[send_email]]
+name = "ROSS_EMAIL"
+destination_address = "rossmfine@gmail.com"

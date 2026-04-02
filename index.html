@@ -449,6 +449,104 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     h1 { font-size: 1.6rem; }
     .trust-row { gap: 12px; }
   }
+
+    /* ── EMAIL CAPTURE ── */
+  .email-capture-box {
+    margin-top: 20px;
+    padding: 22px 20px 18px;
+    background: #f8f7f3;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+  }
+
+  .email-capture-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .email-capture-sub {
+    font-size: 0.9rem;
+    color: var(--navy);
+    line-height: 1.5;
+    margin-bottom: 14px;
+  }
+
+  .email-capture-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .email-capture-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid #d6d3cd;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+  }
+
+  .email-capture-form input:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.10);
+  }
+
+  .email-capture-form button {
+    padding: 14px 18px;
+    border: 1px solid #d6d3cd;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--navy);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+  }
+
+  .email-capture-form button:hover {
+    background: #f1efe9;
+    border-color: #c9c5bd;
+  }
+
+  .email-capture-note {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  .email-capture-success {
+    font-size: 0.88rem;
+    color: var(--success);
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  .email-capture-error {
+    font-size: 0.88rem;
+    color: #b91c1c;
+    margin-top: 12px;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 520px) {
+    .email-capture-form {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .email-capture-form button {
+      width: 100%;
+    }
+  }
 </style>
 </head>
 <body>
@@ -663,6 +761,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         View Card Details →
       </a>
     </div>
+    <div class="email-capture-box" id="email-capture-box">
+  <h3 class="email-capture-title">Get your results emailed to you</h3>
+  <p class="email-capture-sub">
+    Optional — enter your email and we'll send your matched options so you can review them later.
+  </p>
+
+  <form id="email-capture-form" class="email-capture-form">
+    <input
+      type="email"
+      id="email-capture-input"
+      name="email"
+      placeholder="your@email.com"
+      autocomplete="email"
+    />
+    <button type="submit" id="email-capture-submit">Send</button>
+  </form>
+
+  <p class="email-capture-note">
+    No spam. Unsubscribe anytime. We may send relevant offers based on your profile.
+  </p>
+
+  <p id="email-capture-success" class="email-capture-success" style="display:none;">
+    Thanks — your results have been sent.
+  </p>
+
+  <p id="email-capture-error" class="email-capture-error" style="display:none;">
+    Something went wrong. Please try again.
+  </p>
+</div>
 
     <p class="disclaimer">
       Results are based on self-reported information and are for informational purposes only. 
@@ -810,5 +937,56 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }
 </script>
 
+<script>
+  document.getElementById('email-capture-form').addEventListener('submit', async function (e) {
+    e.preventDefault();
+
+    const input = document.getElementById('email-capture-input');
+    const successMsg = document.getElementById('email-capture-success');
+    const errorMsg = document.getElementById('email-capture-error');
+    const submitBtn = document.getElementById('email-capture-submit');
+
+    const email = input.value.trim();
+
+    successMsg.style.display = 'none';
+    errorMsg.style.display = 'none';
+
+    if (email === '') {
+      successMsg.textContent = 'No email entered — you can still continue with your matched offer.';
+      successMsg.style.display = 'block';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    try {
+      const response = await fetch('/api/email-capture', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ email })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok || !data.ok) {
+        throw new Error(data.error || 'Request failed');
+      }
+
+      input.value = '';
+      successMsg.textContent = 'Thanks — your results have been sent.';
+      successMsg.style.display = 'block';
+    } catch (error) {
+      errorMsg.textContent = 'Something went wrong. Please try again.';
+      errorMsg.style.display = 'block';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send';
+    }
+  });
+</script>
 </body>
 </html>
