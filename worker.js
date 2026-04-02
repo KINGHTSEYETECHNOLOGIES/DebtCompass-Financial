@@ -27,15 +27,18 @@ export default {
         }
 
         const rawMessage = [
-          `Subject: New Funnel Email - ${email}`,
-          "MIME-Version: 1.0",
-          "Content-Type: text/plain; charset=UTF-8",
-          "",
-          "A new email was submitted from the DebtCompass Financial funnel.",
-          "",
-          `Submitted email: ${email}`,
-          `Submitted at: ${new Date().toISOString()}`,
-          `Source: ${url.origin}/`,
+            "From: info@debtcompassfinancial.com",
+            "To: rkrai3122@gmail.com",
+            `Reply-To: ${email}`,
+            `Subject: New Funnel Email - ${email}`,
+            "MIME-Version: 1.0",
+            "Content-Type: text/plain; charset=UTF-8",
+            "",
+            "A new email was submitted from the DebtCompass Financial funnel.",
+            "",
+            `Submitted email: ${email}`,
+            `Submitted at: ${new Date().toISOString()}`,
+            `Source: ${url.origin}/`,
         ].join("\n");
 
         const message = new EmailMessage(
