@@ -28,7 +28,7 @@ export default {
 
         const rawMessage = [
             "From: info@debtcompassfinancial.com",
-            "To: rkrai3122@gmail.com",
+            "To: rossmfine@gmail.com",
             `Reply-To: ${email}`,
             `Subject: New Funnel Email - ${email}`,
             "MIME-Version: 1.0",
@@ -43,7 +43,7 @@ export default {
 
         const message = new EmailMessage(
             "info@debtcompassfinancial.com",
-            "rkrai3122@gmail.com",
+            "rossmfine@gmail.com",
             rawMessage
         );
 
