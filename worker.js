@@ -4,7 +4,11 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (request.method === "POST" && url.pathname === "/api/email-capture") {
+    if (url.pathname === "/api/email-capture") {
+      if (request.method !== "POST") {
+        return json({ ok: false, error: "Method not allowed" }, 405);
+      }
+
       try {
         const contentType = request.headers.get("content-type") || "";
         if (!contentType.includes("application/json")) {
