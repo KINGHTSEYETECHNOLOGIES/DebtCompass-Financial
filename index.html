@@ -439,6 +439,7 @@
   }
   .email-row button:hover { background: var(--navy-mid); }
   .ec-confirm { font-size: 0.78rem; color: var(--success); margin-top: 8px; display: none; }
+  .ec-error { font-size: 0.78rem; color: #b91c1c; margin-top: 8px; display: none; }
   .ec-note { font-size: 0.72rem; color: #94a3b8; margin-top: 6px; line-height: 1.5; }
 
   .disclaimer {
@@ -670,11 +671,12 @@
     <div class="email-capture">
       <p class="ec-title">Get your results emailed to you</p>
       <p class="ec-sub">Optional — enter your email and we'll send your matched options so you can review them later.</p>
-      <div class="email-row">
-        <input type="email" id="ec-input" placeholder="your@email.com" />
-        <button onclick="submitEmail()">Send</button>
-      </div>
-      <p class="ec-confirm" id="ec-confirm">✓ Got it — check your inbox shortly.</p>
+      <form class="email-row" id="email-capture-form">
+        <input type="email" id="email-capture-input" name="email" placeholder="your@email.com" autocomplete="email" />
+        <button type="submit" id="email-capture-submit">Send</button>
+      </form>
+      <p class="ec-confirm" id="email-capture-success">✓ Got it — check your inbox shortly.</p>
+      <p class="ec-error" id="email-capture-error">Something went wrong. Please try again.</p>
       <p class="ec-note">No spam. Unsubscribe anytime. We may send relevant offers based on your profile.</p>
     </div>
 
@@ -747,19 +749,54 @@ function showProcessing() {
   }, 2600);
 }
 
-function submitEmail() {
-  const input = document.getElementById('ec-input');
-  const confirm = document.getElementById('ec-confirm');
-  if (!input.value || !input.value.includes('@')) {
-    input.style.borderColor = '#ef4444';
+document.getElementById('email-capture-form').addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const input = document.getElementById('email-capture-input');
+  const successMsg = document.getElementById('email-capture-success');
+  const errorMsg = document.getElementById('email-capture-error');
+  const submitBtn = document.getElementById('email-capture-submit');
+  const email = input.value.trim();
+
+  successMsg.style.display = 'none';
+  errorMsg.style.display = 'none';
+
+  if (email === '') {
+    successMsg.textContent = 'No email entered — you can still continue with your matched offer.';
+    successMsg.style.display = 'block';
     return;
   }
-  input.style.borderColor = '';
-  input.disabled = true;
-  document.querySelector('.email-row button').disabled = true;
-  confirm.style.display = 'block';
-  // TODO: wire input.value to your email capture endpoint or ESP
-}
+
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch('/api/email-capture', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({ email })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok || !data.ok) {
+      throw new Error(data.error || 'Request failed');
+    }
+
+    input.value = '';
+    successMsg.textContent = 'Thanks — your results have been sent.';
+    successMsg.style.display = 'block';
+  } catch (error) {
+    errorMsg.textContent = 'Something went wrong. Please try again.';
+    errorMsg.style.display = 'block';
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send';
+  }
+});
 
 // ═══════════════════════════════════════════════════════════════
 // OFFER LIBRARY
