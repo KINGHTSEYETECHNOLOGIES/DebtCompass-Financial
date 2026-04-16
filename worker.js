@@ -81,8 +81,10 @@ async function handleEmailCapture(request, env, url) {
 }
 
 async function serve404(request, env) {
-  const notFoundUrl = new URL("/404.html", request.url);
-  const notFoundResponse = await env.ASSETS.fetch(notFoundUrl.toString());
+  const notFoundUrl = new URL("/404", request.url);
+  const notFoundResponse = await env.ASSETS.fetch(
+    new Request(notFoundUrl.toString(), request)
+  );
 
   return new Response(notFoundResponse.body, {
     status: 404,
