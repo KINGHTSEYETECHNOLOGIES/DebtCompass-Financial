@@ -27,24 +27,24 @@ export default {
         }
 
         const rawMessage = [
-            "From: info@debtcompassfinancial.com",
-            "To: rossmfine@gmail.com",
-            `Reply-To: ${email}`,
-            `Subject: New Funnel Email - ${email}`,
-            "MIME-Version: 1.0",
-            "Content-Type: text/plain; charset=UTF-8",
-            "",
-            "A new email was submitted from the DebtCompass Financial funnel.",
-            "",
-            `Submitted email: ${email}`,
-            `Submitted at: ${new Date().toISOString()}`,
-            `Source: ${url.origin}/`,
+          "From: info@debtcompassfinancial.com",
+          "To: rossmfine@gmail.com",
+          `Reply-To: ${email}`,
+          `Subject: New Funnel Email - ${email}`,
+          "MIME-Version: 1.0",
+          "Content-Type: text/plain; charset=UTF-8",
+          "",
+          "A new email was submitted from the DebtCompass Financial funnel.",
+          "",
+          `Submitted email: ${email}`,
+          `Submitted at: ${new Date().toISOString()}`,
+          `Source: ${url.origin}/`,
         ].join("\n");
 
         const message = new EmailMessage(
-            "info@debtcompassfinancial.com",
-            "rossmfine@gmail.com",
-            rawMessage
+          "info@debtcompassfinancial.com",
+          "rossmfine@gmail.com",
+          rawMessage
         );
 
         await env.ROSS_EMAIL.send(message);
@@ -52,16 +52,33 @@ export default {
         return json({ ok: true }, 200);
       } catch (error) {
         return json(
-            {
-                ok: false,
-                error: error instanceof Error ? error.message : String(error),
-            },
-            500
+          {
+            ok: false,
+            error: error instanceof Error ? error.message : String(error),
+          },
+          500
         );
       }
     }
 
-    return env.ASSETS.fetch(request);
+    const assetResponse = await env.ASSETS.fetch(request);
+
+    if (assetResponse.status === 404) {
+      const notFoundUrl = new URL("/404.html", request.url);
+      const notFoundRequest = new Request(notFoundUrl.toString(), request);
+      const notFoundResponse = await env.ASSETS.fetch(notFoundRequest);
+
+      return new Response(notFoundResponse.body, {
+        status: 404,
+        statusText: "Not Found",
+        headers: {
+          "Content-Type": "text/html; charset=utf-8",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
+    return assetResponse;
   },
 };
 
