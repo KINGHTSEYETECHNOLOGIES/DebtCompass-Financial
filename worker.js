@@ -63,22 +63,23 @@ export default {
 
     const assetResponse = await env.ASSETS.fetch(request);
 
-    if (assetResponse.status === 404) {
-      const notFoundUrl = new URL("/404.html", request.url);
-      const notFoundRequest = new Request(notFoundUrl.toString(), request);
-      const notFoundResponse = await env.ASSETS.fetch(notFoundRequest);
-
-      return new Response(notFoundResponse.body, {
-        status: 404,
-        statusText: "Not Found",
-        headers: {
-          "Content-Type": "text/html; charset=utf-8",
-          "Cache-Control": "no-store",
-        },
-      });
+    if (assetResponse.status !== 404) {
+      return assetResponse;
     }
 
-    return assetResponse;
+    const notFoundUrl = new URL("/404.html", request.url);
+    const notFoundRequest = new Request(notFoundUrl.toString(), request);
+    const notFoundResponse = await env.ASSETS.fetch(notFoundRequest);
+
+    const headers = new Headers(notFoundResponse.headers);
+    headers.set("Content-Type", "text/html; charset=utf-8");
+    headers.set("Cache-Control", "no-store");
+
+    return new Response(notFoundResponse.body, {
+      status: 404,
+      statusText: "Not Found",
+      headers,
+    });
   },
 };
 
