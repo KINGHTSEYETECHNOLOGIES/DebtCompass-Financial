@@ -87,25 +87,25 @@
 <script>
   window.dataLayer = window.dataLayer || [];
 
-  const params = new URLSearchParams(window.location.search);
-  let broken = params.get('from');
+  window.addEventListener("load", function () {
 
-  if (broken) {
-    broken = decodeURIComponent(broken);
-  } else if (document.referrer) {
-    try {
-      const ref = new URL(document.referrer);
-      broken = ref.pathname + ref.search + ref.hash;
-    } catch {
+    const params = new URLSearchParams(window.location.search);
+
+    let broken = params.get('from');
+
+    if (broken) {
+      broken = decodeURIComponent(broken);
+    } else if (document.referrer) {
       broken = document.referrer;
+    } else {
+      broken = 'unknown';
     }
-  } else {
-    broken = 'unknown';
-  }
 
-  window.dataLayer.push({
-    event: 'page_not_found',
-    broken_url: broken
+    window.dataLayer.push({
+      event: 'page_not_found',
+      broken_url: broken
+    });
+
   });
 </script>
 </body>
