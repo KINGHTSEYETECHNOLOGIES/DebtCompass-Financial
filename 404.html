@@ -87,11 +87,20 @@
   window.dataLayer = window.dataLayer || [];
 
   const params = new URLSearchParams(window.location.search);
-  const broken = params.get('from') || document.referrer || 'unknown';
+
+  let broken = params.get('from');
+
+  if (broken) {
+    broken = decodeURIComponent(broken);
+  } else if (document.referrer) {
+    broken = document.referrer;
+  } else {
+    broken = 'unknown';
+  }
 
   window.dataLayer.push({
     event: 'page_not_found',
-    broken_url: decodeURIComponent(broken)
+    broken_url: broken
   });
 </script>
 </body>
