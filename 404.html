@@ -88,13 +88,17 @@
   window.dataLayer = window.dataLayer || [];
 
   const params = new URLSearchParams(window.location.search);
-
   let broken = params.get('from');
 
   if (broken) {
     broken = decodeURIComponent(broken);
   } else if (document.referrer) {
-    broken = document.referrer;
+    try {
+      const ref = new URL(document.referrer);
+      broken = ref.pathname + ref.search + ref.hash;
+    } catch {
+      broken = document.referrer;
+    }
   } else {
     broken = 'unknown';
   }
