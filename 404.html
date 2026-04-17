@@ -88,24 +88,22 @@
   window.dataLayer = window.dataLayer || [];
 
   window.addEventListener("load", function () {
-
     const params = new URLSearchParams(window.location.search);
 
-    let broken = params.get('from');
+    let broken = params.get("from");
 
     if (broken) {
       broken = decodeURIComponent(broken);
     } else if (document.referrer) {
       broken = document.referrer;
     } else {
-      broken = 'unknown';
+      broken = "unknown";
     }
 
     window.dataLayer.push({
-      event: 'page_not_found',
+      event: "page_not_found",
       broken_url: broken
     });
-
   });
 </script>
 </body>
