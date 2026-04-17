@@ -4,24 +4,39 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
 
+    // API route
     if (url.pathname === "/api/email-capture") {
       return handleEmailCapture(request, env, url);
+    }
+
+    // Let the real 404 page load normally
+    if (url.pathname === "/404" || url.pathname === "/404.html") {
+      return env.ASSETS.fetch(request);
     }
 
     try {
       const assetResponse = await env.ASSETS.fetch(request);
 
+      // Existing file/page -> serve normally
       if (assetResponse.status !== 404) {
         return assetResponse;
       }
 
-      return await serve404(request, env);
+      // Missing file/page -> redirect to /404 with original path
+      return redirectTo404(request);
     } catch (error) {
-      console.error("Worker asset handling error:", error);
-      return await serve404(request, env);
+      console.error("Asset fetch failed:", error);
+      return redirectTo404(request);
     }
   },
 };
+
+function redirectTo404(request) {
+  const url = new URL(request.url);
+  const redirectUrl = new URL("/404", request.url);
+  redirectUrl.searchParams.set("from", url.pathname + url.search);
+  return Response.redirect(redirectUrl.toString(), 302);
+}
 
 async function handleEmailCapture(request, env, url) {
   if (request.method !== "POST") {
@@ -78,22 +93,6 @@ async function handleEmailCapture(request, env, url) {
       500
     );
   }
-}
-
-async function serve404(request, env) {
-  const notFoundUrl = new URL("/404", request.url);
-  const notFoundResponse = await env.ASSETS.fetch(
-    new Request(notFoundUrl.toString(), request)
-  );
-
-  return new Response(notFoundResponse.body, {
-    status: 404,
-    statusText: "Not Found",
-    headers: {
-      "Content-Type": "text/html; charset=utf-8",
-      "Cache-Control": "no-store",
-    },
-  });
 }
 
 function json(data, status = 200) {

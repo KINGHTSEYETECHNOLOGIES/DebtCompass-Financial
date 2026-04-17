@@ -84,10 +84,15 @@
   </div>
 
   <script>
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: 'page_not_found'
-    });
-  </script>
+  window.dataLayer = window.dataLayer || [];
+
+  const params = new URLSearchParams(window.location.search);
+  const brokenUrl = params.get('from') || window.location.pathname;
+
+  window.dataLayer.push({
+    event: 'page_not_found',
+    broken_url: brokenUrl
+  });
+</script>
 </body>
 </html>
