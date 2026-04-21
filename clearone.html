@@ -31,7 +31,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'DM Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif;
     background: var(--cream);
     color: var(--navy);
     min-height: 100vh;
@@ -478,22 +478,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     h1 { font-size: 1.6rem; }
   }
 </style>
-<!-- TrustedForm -->
-<script type="text/javascript">
-  (function() {
-    var tf = document.createElement('script');
-    tf.type = 'text/javascript';
-    tf.async = true;
-    tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
-      '://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +
-      new Date().getTime() + Math.random();
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(tf, s);
-  })();
-</script>
-<noscript>
-  <img src='https://api.trustedform.com/ns.gif' />
-</noscript>
-<!-- End TrustedForm -->
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1230,6 +1214,16 @@ function showResult() {
 
   goTo('screen-result');
 }
+</script>
+<script>
+window.addEventListener("load", function() {
+  setTimeout(function() {
+    var s = document.createElement("script");
+    s.src = "https://cdn.trustedform.com/trustedform-1.11.7.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }, 3000);
+});
 </script>
 <form style="display:none;"></form>
 </body>

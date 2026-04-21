@@ -30,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--ink); line-height: 1.6; }
+  body { font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Arial, sans-serif; background: var(--white); color: var(--ink); line-height: 1.6; }
 
   /* ── HEADER ── */
   header {
@@ -410,26 +410,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 </style>
 
-
-
-  <!-- TrustedForm -->
-  <script type="text/javascript">
-    (function() {
-      var tf = document.createElement('script');
-      tf.type = 'text/javascript';
-      tf.async = true;
-      tf.src = ("https:" == document.location.protocol ? 'https' : 'http') +
-        '://api.trustedform.com/trustedform.js?field=xxTrustedFormCertUrl&use_tagged_consent=true&l=' +
-        new Date().getTime() + Math.random();
-      var s = document.getElementsByTagName('script')[0]; 
-      s.parentNode.insertBefore(tf, s);
-    })();
-  </script>
-  <noscript>
-    <img src='https://api.trustedform.com/ns.gif' />
-  </noscript>
-  <!-- End TrustedForm -->
-
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -639,6 +619,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </div>
+  <script>
+  window.addEventListener("load", function() {
+    setTimeout(function() {
+      var s = document.createElement("script");
+      s.src = "https://cdn.trustedform.com/trustedform-1.11.7.js";
+      s.async = true;
+      document.body.appendChild(s);
+    }, 3000);
+  });
+  </script>
 <form id="trustedform-form" style="display:none;"></form>
 </body>
 </html>
