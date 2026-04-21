@@ -803,6 +803,11 @@ async function submitEmail() {
     }
 
     confirm.style.display = 'block';
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: 'email_capture',
+      email: email
+});
   } catch (err) {
     input.disabled = false;
     button.disabled = false;
