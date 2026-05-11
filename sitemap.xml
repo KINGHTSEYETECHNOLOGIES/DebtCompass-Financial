@@ -1,33 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://www.debtcompassfinancial.com/</loc>
+    <loc>https://debtcompassfinancial.com/</loc>
   </url>
+
   <url>
-    <loc>https://www.debtcompassfinancial.com/legal.html</loc>
+    <loc>https://debtcompassfinancial.com/legal.html</loc>
   </url>
+
   <url>
-    <loc>https://www.debtcompassfinancial.com/direct-ndr.html</loc>
+    <loc>https://debtcompassfinancial.com/clearone.html</loc>
   </url>
+
   <url>
-    <loc>https://www.debtcompassfinancial.com/direct-jg.html</loc>
+    <loc>https://debtcompassfinancial.com/freedom.html</loc>
   </url>
+
   <url>
-    <loc>https://www.debtcompassfinancial.com/direct-freedom.html</loc>
+    <loc>https://debtcompassfinancial.com/jg.html</loc>
   </url>
+
   <url>
-    <loc>https://www.debtcompassfinancial.com/direct-clearone.html</loc>
+    <loc>https://debtcompassfinancial.com/ndr.html</loc>
   </url>
-  <url>
-    <loc>https://www.debtcompassfinancial.com/ndr.html</loc>
-  </url>
-  <url>
-    <loc>https://www.debtcompassfinancial.com/jg.html</loc>
-  </url>
-  <url>
-    <loc>https://www.debtcompassfinancial.com/freedom.html</loc>
-  </url>
-  <url>
-    <loc>https://www.debtcompassfinancial.com/clearone.html</loc>
-  </url>
+
 </urlset>
